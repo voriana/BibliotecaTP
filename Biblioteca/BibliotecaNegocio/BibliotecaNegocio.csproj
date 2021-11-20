@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3316D274-BA7B-4952-A752-CDD921D32975}</ProjectGuid>
+    <ProjectGuid>{FC547252-57C4-4556-8B48-83FD2DDB0912}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BibliotecaEntidades</RootNamespace>
-    <AssemblyName>BibliotecaEntidades</AssemblyName>
+    <RootNamespace>BibliotecaNegocio</RootNamespace>
+    <AssemblyName>BibliotecaNegocio</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,16 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Cliente.cs" />
-    <Compile Include="Entidades\Ejemplar.cs" />
-    <Compile Include="Entidades\Libro.cs" />
-    <Compile Include="Entidades\Persona.cs" />
-    <Compile Include="Entidades\Prestamo.cs" />
-    <Compile Include="Modelos\TransactionResult.cs" />
+    <Compile Include="PrestamoServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Excepciones\" />
+    <ProjectReference Include="..\BibliotecaDatos\BibliotecaDatos.csproj">
+      <Project>{b0e9f2d1-cd8c-4635-be59-3b0c165e7d7c}</Project>
+      <Name>BibliotecaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
+      <Project>{3316d274-ba7b-4952-a752-cdd921d32975}</Project>
+      <Name>BibliotecaEntidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliotecaEntidades.Entidades
 {
+    [DataContract]
     public class Cliente: Persona
     {
         private int _id;
@@ -21,9 +23,18 @@ namespace BibliotecaEntidades.Entidades
             _activo = activo;
 
         }
-
+        [DataMember(Name ="Id")]
         public int Id { get => _id; set => _id = value; }
+
+        [DataMember(Name = "fechaAlta")]
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
+       
+        [DataMember(Name = "activo")]
         public bool Activo { get => _activo; set => _activo = value; }
+
+        public override string ToString()
+        {
+            return $"Id:{Id}-{ base.DatosPersonales()}";
+        }
     }
 }

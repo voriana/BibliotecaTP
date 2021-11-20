@@ -43,7 +43,6 @@ namespace BibliotecaUI
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.lbPlazo = new System.Windows.Forms.Label();
@@ -58,9 +57,11 @@ namespace BibliotecaUI
             this.lbIdCliente = new System.Windows.Forms.Label();
             this.tbIdCliente = new System.Windows.Forms.TextBox();
             this.CheckActivo = new System.Windows.Forms.CheckBox();
-            this.lbDetalle = new System.Windows.Forms.Label();
+            this.lbListar = new System.Windows.Forms.Label();
             this.lstPrestamos = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbDatosAltaPrestamo.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtIdPrestamo
@@ -184,19 +185,10 @@ namespace BibliotecaUI
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Usuario";
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(29, 111);
+            this.radioButton1.Location = new System.Drawing.Point(6, 19);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(73, 17);
             this.radioButton1.TabIndex = 14;
@@ -207,7 +199,7 @@ namespace BibliotecaUI
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(122, 111);
+            this.radioButton2.Location = new System.Drawing.Point(98, 19);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(61, 17);
             this.radioButton2.TabIndex = 15;
@@ -334,14 +326,14 @@ namespace BibliotecaUI
             this.CheckActivo.Text = "Activo";
             this.CheckActivo.UseVisualStyleBackColor = true;
             // 
-            // lbDetalle
+            // lbListar
             // 
-            this.lbDetalle.AutoSize = true;
-            this.lbDetalle.Location = new System.Drawing.Point(238, 74);
-            this.lbDetalle.Name = "lbDetalle";
-            this.lbDetalle.Size = new System.Drawing.Size(92, 13);
-            this.lbDetalle.TabIndex = 28;
-            this.lbDetalle.Text = "Detalles Prestamo";
+            this.lbListar.AutoSize = true;
+            this.lbListar.Location = new System.Drawing.Point(238, 74);
+            this.lbListar.Name = "lbListar";
+            this.lbListar.Size = new System.Drawing.Size(84, 13);
+            this.lbListar.TabIndex = 28;
+            this.lbListar.Text = "Listar Prestamos";
             // 
             // lstPrestamos
             // 
@@ -351,22 +343,31 @@ namespace BibliotecaUI
             this.lstPrestamos.Size = new System.Drawing.Size(217, 225);
             this.lstPrestamos.TabIndex = 29;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Location = new System.Drawing.Point(24, 95);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(183, 46);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Usuario";
+            // 
             // FrmPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(792, 381);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lstPrestamos);
-            this.Controls.Add(this.lbDetalle);
+            this.Controls.Add(this.lbListar);
             this.Controls.Add(this.CheckActivo);
             this.Controls.Add(this.gbDatosAltaPrestamo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnConfirmar);
@@ -379,8 +380,11 @@ namespace BibliotecaUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrestamo";
             this.Text = "Registro Prestamos";
+            this.Load += new System.EventHandler(this.FrmPrestamo_Load);
             this.gbDatosAltaPrestamo.ResumeLayout(false);
             this.gbDatosAltaPrestamo.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,7 +405,6 @@ namespace BibliotecaUI
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label lbPlazo;
@@ -416,8 +419,9 @@ namespace BibliotecaUI
         private System.Windows.Forms.Label lbIdCliente;
         private System.Windows.Forms.TextBox tbIdCliente;
         private System.Windows.Forms.CheckBox CheckActivo;
-        private System.Windows.Forms.Label lbDetalle;
+        private System.Windows.Forms.Label lbListar;
         private System.Windows.Forms.ListBox lstPrestamos;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BibliotecaUI
 {
-    public partial class FrmLibro : Form
+    public partial class FrmAltaLibro : Form
     {
-        public FrmLibro()
+        public FrmAltaLibro()
         {
             InitializeComponent();
         }

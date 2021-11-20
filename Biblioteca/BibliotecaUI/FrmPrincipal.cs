@@ -22,7 +22,14 @@ namespace BibliotecaUI
             prestamo = new FrmPrestamo(this);
         }
 
-        private void btPrestamos_Click(object sender, EventArgs e)
+     
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAltaPrestamo_Click(object sender, EventArgs e)
         {
             prestamo.Show();
             this.Hide();

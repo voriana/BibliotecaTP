@@ -1,7 +1,7 @@
 ﻿
 namespace BibliotecaUI
 {
-    partial class FrmLibro
+    partial class FrmAltaLibro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace BibliotecaUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLibro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaLibro));
             this.lbId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lbAutor = new System.Windows.Forms.Label();
@@ -46,9 +46,7 @@ namespace BibliotecaUI
             this.txPags = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnListar = new System.Windows.Forms.Button();
-            this.btnAlta = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -178,71 +176,45 @@ namespace BibliotecaUI
             this.btnListar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnListar.FlatAppearance.BorderSize = 4;
             this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnListar.Location = new System.Drawing.Point(59, 331);
+            this.btnListar.Location = new System.Drawing.Point(246, 331);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.Size = new System.Drawing.Size(103, 23);
             this.btnListar.TabIndex = 16;
-            this.btnListar.Text = "Listar Libros";
+            this.btnListar.Text = "Guardar cambios";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
-            // btnAlta
+            // btnLimpiar
             // 
-            this.btnAlta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAlta.FlatAppearance.BorderSize = 4;
-            this.btnAlta.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAlta.Location = new System.Drawing.Point(163, 331);
-            this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(75, 23);
-            this.btnAlta.TabIndex = 17;
-            this.btnAlta.Text = "Agregar";
-            this.btnAlta.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnModificar.FlatAppearance.BorderSize = 4;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnModificar.Location = new System.Drawing.Point(264, 331);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 18;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 4;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnEliminar.Location = new System.Drawing.Point(365, 331);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 19;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 4;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLimpiar.Location = new System.Drawing.Point(137, 331);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnVolver
             // 
             this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnVolver.FlatAppearance.BorderSize = 4;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnVolver.Location = new System.Drawing.Point(481, 331);
+            this.btnVolver.Location = new System.Drawing.Point(383, 331);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 20;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             // 
-            // FrmLibro
+            // FrmAltaLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(648, 366);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAlta);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.txPags);
@@ -261,7 +233,7 @@ namespace BibliotecaUI
             this.Controls.Add(this.lbId);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmLibro";
+            this.Name = "FrmAltaLibro";
             this.Text = "Registro Libro";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -286,9 +258,7 @@ namespace BibliotecaUI
         private System.Windows.Forms.TextBox txPags;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Button btnAlta;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnVolver;
     }
 }
