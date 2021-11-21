@@ -34,5 +34,10 @@ namespace BibliotecaEntidades.Entidades
         public string Editorial { get => _editorial; set => _editorial = value; }
         public int Paginas { get => _paginas; set => _paginas = value; }
         public string Tema { get => _tema; set => _tema = value; }
+
+        public override string ToString()
+        {
+            return $"Id:{Id}-Autor:{Autor}-Titulo:{Titulo}-Tema:{Tema}";
+        }
     }
 }

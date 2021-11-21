@@ -9,18 +9,18 @@ namespace BibliotecaEntidades.Entidades
     public class Prestamo
     {
         private int _id;
-        private int _idcliente;
-        private int _idEjemplar;
+        private Cliente _cliente;
+        private Ejemplar _ejemplar;
         private int _plazo;
         private DateTime _fechaPrestamo;
         private DateTime _fechaDevolucionTentativa;
         private DateTime _fechaDevolucionReal;
 
-        public Prestamo(int id, int idcliente, int idEjemplar, int plazo, DateTime fechaPrestamo, DateTime fechaDevolucionTentativa, DateTime fechaDevolucionReal)
+        public Prestamo(int id, Cliente cliente, Ejemplar ejemplar, int plazo, DateTime fechaPrestamo, DateTime fechaDevolucionTentativa, DateTime fechaDevolucionReal)
         {
             _id = id;
-            _idcliente = idcliente;
-            _idEjemplar = idEjemplar;
+            _cliente = cliente;
+            _ejemplar = ejemplar;
             _plazo = plazo;
             _fechaPrestamo = fechaPrestamo;
             _fechaDevolucionTentativa = fechaDevolucionTentativa;
@@ -28,8 +28,8 @@ namespace BibliotecaEntidades.Entidades
         }
 
         public int Id { get => _id; set => _id = value; }
-        public int Idcliente { get => _idcliente; set => _idcliente = value; }
-        public int IdEjemplar { get => _idEjemplar; set => _idEjemplar = value; }
+        public Cliente Cliente { get => _cliente; set => _cliente = value; }
+        public Ejemplar Ejemplar { get => _ejemplar; set => _ejemplar = value; }
         public int Plazo { get => _plazo; set => _plazo = value; }
         public DateTime FechaPrestamo { get => _fechaPrestamo; set => _fechaPrestamo = value; }
         public DateTime FechaDevolucionTentativa { get => _fechaDevolucionTentativa; set => _fechaDevolucionTentativa = value; }

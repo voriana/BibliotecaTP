@@ -15,13 +15,14 @@ namespace BibliotecaUI
     public partial class FrmPrestamo : Form
     {
         
-        private PrestamoServicio _servicio;
+        private ClienteServicio _servicioCli;
+       
         public FrmPrestamo(Form form)
         {
             InitializeComponent();
             this.Owner = form;
-            
-            _servicio = new PrestamoServicio();
+            _servicioCli = new ClienteServicio();
+           
         }
 
 
@@ -33,21 +34,22 @@ namespace BibliotecaUI
 
         private void FrmPrestamo_Load(object sender, EventArgs e)
         {
-            try 
-            {
-                CargaLista();
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            CargaComboCliente();
+            //try 
+            //{
+               
+            //}catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
-        private void CargaLista()
+        private void CargaComboCliente()
         {
-             
             cbClientes.DataSource = null;
-            cbClientes.DataSource = _servicio.TraerClientes();
-           
-        }
+            cbClientes.DataSource = _servicioCli.TraerClientes();
+
+
+            ;        }
     }
 }

@@ -1,31 +1,28 @@
-﻿using System;
+﻿using BibliotecaEntidades.Entidades;
+using BibliotecaEntidades.Modelos;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BibliotecaEntidades.Entidades;
-using BibliotecaEntidades.Modelos;
-using Newtonsoft.Json;
-
-
 
 
 namespace BibliotecaDatos
 {
-    public class PrestamoMapper
+    public class ClienteMapper
     {
-        
-
-        public PrestamoMapper()
+        public ClienteMapper()
         {
-            
+
         }
 
-        public List<Cliente> getClientes()
+        public List<Cliente> GetClientes()
         {
-            string json = WebHelper.Get("cliente");
+            string json = WebHelper.Get("cliente/890175");
             List<Cliente> listaObtenida = MapList(json);
-            return listaObtenida;    
+            return listaObtenida;
         }
 
         private List<Cliente> MapList(string json)

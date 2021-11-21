@@ -9,20 +9,20 @@ using BibliotecaEntidades.Modelos;
 
 namespace BibliotecaNegocio
 {
-    public class PrestamoServicio
+    public class ClienteServicio
     {
-        private PrestamoMapper _prestamoMapper;
+        private ClienteMapper _clienteMapper;
         private List<Cliente> _clientes;
 
-        public PrestamoServicio()
+        public ClienteServicio()
         {
-            _prestamoMapper = new PrestamoMapper();
+            _clienteMapper = new ClienteMapper();
             _clientes = new List<Cliente>();
         }
 
         public List<Cliente> TraerClientes()
         {
-            return _prestamoMapper.getClientes();
+            return _clienteMapper.GetClientes();
         }
     }
 }
