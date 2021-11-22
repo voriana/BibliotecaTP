@@ -185,6 +185,7 @@ namespace BibliotecaUI
             this.btnListarLibros.TabIndex = 4;
             this.btnListarLibros.Text = "Listar Libros";
             this.btnListarLibros.UseVisualStyleBackColor = true;
+            this.btnListarLibros.Click += new System.EventHandler(this.btnListarLibros_Click);
             // 
             // btnAltaLibro
             // 

@@ -230,7 +230,7 @@ namespace BibliotecaUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(661, 388);
+            this.ClientSize = new System.Drawing.Size(578, 387);
             this.Controls.Add(this.btnRefrescar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnLimpiar);

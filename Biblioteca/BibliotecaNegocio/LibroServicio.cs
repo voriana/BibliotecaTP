@@ -32,7 +32,7 @@ namespace BibliotecaNegocio
                 throw new Exception("Un libro debe contener al menos una pagina");
             }
 
-            Libro libro = new Libro(id, titulo, autor, edicion, editorial, pags, tema);
+            Libro libro = new Libro(id, titulo, autor, edicion, editorial, pags, tema,1);
             TransactionResult resultado = _libroMapper.AltaLibro(libro);
             return resultado;
 

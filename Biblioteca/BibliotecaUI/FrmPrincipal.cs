@@ -15,12 +15,14 @@ namespace BibliotecaUI
         private FrmPrestamo prestamo;
         //private FrmCliente cliente;
         private FrmAltaLibro libro;
+        private FrmListarLibros _frmListar;
         //private FrmEjemplar ejemplar;
         public Principal()
         {
             InitializeComponent();
             prestamo = new FrmPrestamo(this);
             libro = new FrmAltaLibro(this);
+            _frmListar = new FrmListarLibros(this);
         }
 
      
@@ -40,6 +42,14 @@ namespace BibliotecaUI
         {
             libro.Show();
             this.Hide();
+        }
+
+        private void btnListarLibros_Click(object sender, EventArgs e)
+        {
+            _frmListar.Show();
+            this.Hide();
+            
+            
         }
     }
 }
