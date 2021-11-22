@@ -34,7 +34,13 @@ namespace BibliotecaEntidades.Entidades
 
         public override string ToString()
         {
-            return $"Id:{Id}-{ base.DatosPersonales()}";
+            return $"Id:{Id} - { base.DatosPersonales()}";
         }
+
+        public string MostrarCombo
+        {
+            get { return $"{this.Nombre} {this.Apellido}"; }
+        }
+       
     }
 }

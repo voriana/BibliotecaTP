@@ -39,5 +39,9 @@ namespace BibliotecaEntidades.Entidades
         {
             return $"Id:{Id}-Autor:{Autor}-Titulo:{Titulo}-Tema:{Tema}";
         }
+        public string MostrarEnlista
+        {
+            get { return $"Titulo:{Titulo}-Autor:{Autor}"; }
+        }
     }
 }

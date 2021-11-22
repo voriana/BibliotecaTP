@@ -44,7 +44,7 @@ namespace BibliotecaEntidades.Entidades
 
         public string DatosPersonales()
         {
-            return string.Format($"Dni: {this.Dni}-Nombre:{this.Nombre}-Apellido{this.Apellido}");
+            return string.Format($"Dni:{this.Dni} - Nombre:{this.Nombre} - Apellido{this.Apellido}");
         }
           
         public string DatosContacto()

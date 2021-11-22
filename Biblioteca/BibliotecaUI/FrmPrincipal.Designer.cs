@@ -31,22 +31,18 @@ namespace BibliotecaUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.gbClientes = new System.Windows.Forms.GroupBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.btnListarCliente = new System.Windows.Forms.Button();
             this.btnAltaCliente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnListarPres = new System.Windows.Forms.Button();
-            this.btnBuscarPrestamo = new System.Windows.Forms.Button();
             this.btnAltaPrestamo = new System.Windows.Forms.Button();
             this.gbEjemplares = new System.Windows.Forms.GroupBox();
-            this.btnBuscarEjemplar = new System.Windows.Forms.Button();
+            this.btnListarEjemplar = new System.Windows.Forms.Button();
             this.btnAltaEjemplar = new System.Windows.Forms.Button();
             this.gbAltaLibro = new System.Windows.Forms.GroupBox();
-            this.btnBuscarLibro = new System.Windows.Forms.Button();
+            this.btnListarLibros = new System.Windows.Forms.Button();
             this.btnAltaLibro = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnListarCliente = new System.Windows.Forms.Button();
-            this.btnListarEjemplar = new System.Windows.Forms.Button();
-            this.btnListarLibros = new System.Windows.Forms.Button();
             this.gbClientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbEjemplares.SuspendLayout();
@@ -56,28 +52,27 @@ namespace BibliotecaUI
             // gbClientes
             // 
             this.gbClientes.Controls.Add(this.btnListarCliente);
-            this.gbClientes.Controls.Add(this.btnBuscarCliente);
             this.gbClientes.Controls.Add(this.btnAltaCliente);
             this.gbClientes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbClientes.Location = new System.Drawing.Point(25, 89);
             this.gbClientes.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.gbClientes.Name = "gbClientes";
             this.gbClientes.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.gbClientes.Size = new System.Drawing.Size(178, 224);
+            this.gbClientes.Size = new System.Drawing.Size(177, 133);
             this.gbClientes.TabIndex = 0;
             this.gbClientes.TabStop = false;
             this.gbClientes.Text = "Módulo Clientes";
             // 
-            // btnBuscarCliente
+            // btnListarCliente
             // 
-            this.btnBuscarCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.Location = new System.Drawing.Point(32, 101);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(110, 23);
-            this.btnBuscarCliente.TabIndex = 1;
-            this.btnBuscarCliente.Text = "Buscar Cliente";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnListarCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarCliente.Location = new System.Drawing.Point(32, 83);
+            this.btnListarCliente.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnListarCliente.Name = "btnListarCliente";
+            this.btnListarCliente.Size = new System.Drawing.Size(110, 23);
+            this.btnListarCliente.TabIndex = 3;
+            this.btnListarCliente.Text = "Listar Clientes";
+            this.btnListarCliente.UseVisualStyleBackColor = true;
             // 
             // btnAltaCliente
             // 
@@ -93,14 +88,13 @@ namespace BibliotecaUI
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnListarPres);
-            this.groupBox1.Controls.Add(this.btnBuscarPrestamo);
             this.groupBox1.Controls.Add(this.btnAltaPrestamo);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(219, 89);
+            this.groupBox1.Location = new System.Drawing.Point(26, 230);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.groupBox1.Size = new System.Drawing.Size(178, 224);
+            this.groupBox1.Size = new System.Drawing.Size(177, 133);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Módulo Préstamos";
@@ -108,7 +102,7 @@ namespace BibliotecaUI
             // btnListarPres
             // 
             this.btnListarPres.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarPres.Location = new System.Drawing.Point(34, 161);
+            this.btnListarPres.Location = new System.Drawing.Point(31, 83);
             this.btnListarPres.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnListarPres.Name = "btnListarPres";
             this.btnListarPres.Size = new System.Drawing.Size(110, 23);
@@ -116,21 +110,10 @@ namespace BibliotecaUI
             this.btnListarPres.Text = "Listar Prestamos";
             this.btnListarPres.UseVisualStyleBackColor = true;
             // 
-            // btnBuscarPrestamo
-            // 
-            this.btnBuscarPrestamo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPrestamo.Location = new System.Drawing.Point(34, 101);
-            this.btnBuscarPrestamo.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnBuscarPrestamo.Name = "btnBuscarPrestamo";
-            this.btnBuscarPrestamo.Size = new System.Drawing.Size(110, 23);
-            this.btnBuscarPrestamo.TabIndex = 2;
-            this.btnBuscarPrestamo.Text = "Buscar Préstamo";
-            this.btnBuscarPrestamo.UseVisualStyleBackColor = true;
-            // 
             // btnAltaPrestamo
             // 
             this.btnAltaPrestamo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaPrestamo.Location = new System.Drawing.Point(34, 40);
+            this.btnAltaPrestamo.Location = new System.Drawing.Point(31, 40);
             this.btnAltaPrestamo.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnAltaPrestamo.Name = "btnAltaPrestamo";
             this.btnAltaPrestamo.Size = new System.Drawing.Size(110, 23);
@@ -142,28 +125,27 @@ namespace BibliotecaUI
             // gbEjemplares
             // 
             this.gbEjemplares.Controls.Add(this.btnListarEjemplar);
-            this.gbEjemplares.Controls.Add(this.btnBuscarEjemplar);
             this.gbEjemplares.Controls.Add(this.btnAltaEjemplar);
             this.gbEjemplares.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEjemplares.Location = new System.Drawing.Point(412, 89);
+            this.gbEjemplares.Location = new System.Drawing.Point(235, 89);
             this.gbEjemplares.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.gbEjemplares.Name = "gbEjemplares";
             this.gbEjemplares.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.gbEjemplares.Size = new System.Drawing.Size(178, 224);
+            this.gbEjemplares.Size = new System.Drawing.Size(177, 133);
             this.gbEjemplares.TabIndex = 1;
             this.gbEjemplares.TabStop = false;
             this.gbEjemplares.Text = "Módulo Ejemplares";
             // 
-            // btnBuscarEjemplar
+            // btnListarEjemplar
             // 
-            this.btnBuscarEjemplar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarEjemplar.Location = new System.Drawing.Point(28, 101);
-            this.btnBuscarEjemplar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnBuscarEjemplar.Name = "btnBuscarEjemplar";
-            this.btnBuscarEjemplar.Size = new System.Drawing.Size(110, 23);
-            this.btnBuscarEjemplar.TabIndex = 3;
-            this.btnBuscarEjemplar.Text = "Buscar Ejemplar";
-            this.btnBuscarEjemplar.UseVisualStyleBackColor = true;
+            this.btnListarEjemplar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarEjemplar.Location = new System.Drawing.Point(28, 83);
+            this.btnListarEjemplar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnListarEjemplar.Name = "btnListarEjemplar";
+            this.btnListarEjemplar.Size = new System.Drawing.Size(110, 23);
+            this.btnListarEjemplar.TabIndex = 3;
+            this.btnListarEjemplar.Text = "Listar Ejemplares";
+            this.btnListarEjemplar.UseVisualStyleBackColor = true;
             // 
             // btnAltaEjemplar
             // 
@@ -181,29 +163,28 @@ namespace BibliotecaUI
             // 
             this.gbAltaLibro.AutoSize = true;
             this.gbAltaLibro.Controls.Add(this.btnListarLibros);
-            this.gbAltaLibro.Controls.Add(this.btnBuscarLibro);
             this.gbAltaLibro.Controls.Add(this.btnAltaLibro);
             this.gbAltaLibro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.gbAltaLibro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAltaLibro.Location = new System.Drawing.Point(608, 89);
+            this.gbAltaLibro.Location = new System.Drawing.Point(235, 230);
             this.gbAltaLibro.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.gbAltaLibro.Name = "gbAltaLibro";
             this.gbAltaLibro.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.gbAltaLibro.Size = new System.Drawing.Size(178, 224);
+            this.gbAltaLibro.Size = new System.Drawing.Size(177, 133);
             this.gbAltaLibro.TabIndex = 1;
             this.gbAltaLibro.TabStop = false;
             this.gbAltaLibro.Text = "Módulo Libro";
             // 
-            // btnBuscarLibro
+            // btnListarLibros
             // 
-            this.btnBuscarLibro.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarLibro.Location = new System.Drawing.Point(32, 101);
-            this.btnBuscarLibro.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnBuscarLibro.Name = "btnBuscarLibro";
-            this.btnBuscarLibro.Size = new System.Drawing.Size(110, 23);
-            this.btnBuscarLibro.TabIndex = 4;
-            this.btnBuscarLibro.Text = "Buscar Libro";
-            this.btnBuscarLibro.UseVisualStyleBackColor = true;
+            this.btnListarLibros.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarLibros.Location = new System.Drawing.Point(32, 83);
+            this.btnListarLibros.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnListarLibros.Name = "btnListarLibros";
+            this.btnListarLibros.Size = new System.Drawing.Size(110, 23);
+            this.btnListarLibros.TabIndex = 4;
+            this.btnListarLibros.Text = "Listar Libros";
+            this.btnListarLibros.UseVisualStyleBackColor = true;
             // 
             // btnAltaLibro
             // 
@@ -218,6 +199,7 @@ namespace BibliotecaUI
             this.btnAltaLibro.TabIndex = 3;
             this.btnAltaLibro.Text = "Alta Libro";
             this.btnAltaLibro.UseVisualStyleBackColor = true;
+            this.btnAltaLibro.Click += new System.EventHandler(this.btnAltaLibro_Click);
             // 
             // label1
             // 
@@ -231,45 +213,12 @@ namespace BibliotecaUI
             this.label1.Text = "OPCIONES DEL SISTEMA";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnListarCliente
-            // 
-            this.btnListarCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarCliente.Location = new System.Drawing.Point(32, 161);
-            this.btnListarCliente.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnListarCliente.Name = "btnListarCliente";
-            this.btnListarCliente.Size = new System.Drawing.Size(110, 23);
-            this.btnListarCliente.TabIndex = 3;
-            this.btnListarCliente.Text = "Listar Clientes";
-            this.btnListarCliente.UseVisualStyleBackColor = true;
-            // 
-            // btnListarEjemplar
-            // 
-            this.btnListarEjemplar.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarEjemplar.Location = new System.Drawing.Point(28, 161);
-            this.btnListarEjemplar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnListarEjemplar.Name = "btnListarEjemplar";
-            this.btnListarEjemplar.Size = new System.Drawing.Size(110, 23);
-            this.btnListarEjemplar.TabIndex = 3;
-            this.btnListarEjemplar.Text = "Listar Ejemplares";
-            this.btnListarEjemplar.UseVisualStyleBackColor = true;
-            // 
-            // btnListarLibros
-            // 
-            this.btnListarLibros.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarLibros.Location = new System.Drawing.Point(32, 161);
-            this.btnListarLibros.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnListarLibros.Name = "btnListarLibros";
-            this.btnListarLibros.Size = new System.Drawing.Size(110, 23);
-            this.btnListarLibros.TabIndex = 4;
-            this.btnListarLibros.Text = "Listar Libros";
-            this.btnListarLibros.UseVisualStyleBackColor = true;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(796, 492);
+            this.ClientSize = new System.Drawing.Size(448, 403);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gbAltaLibro);
             this.Controls.Add(this.gbEjemplares);
@@ -302,11 +251,7 @@ namespace BibliotecaUI
         private System.Windows.Forms.Button btnAltaEjemplar;
         private System.Windows.Forms.GroupBox gbAltaLibro;
         private System.Windows.Forms.Button btnAltaLibro;
-        private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Button btnListarPres;
-        private System.Windows.Forms.Button btnBuscarPrestamo;
-        private System.Windows.Forms.Button btnBuscarEjemplar;
-        private System.Windows.Forms.Button btnBuscarLibro;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnListarCliente;
         private System.Windows.Forms.Button btnListarEjemplar;

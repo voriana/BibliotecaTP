@@ -33,5 +33,10 @@ namespace BibliotecaEntidades.Entidades
         {
             return $"Id Ejemplar{Id}-Libro titulo:{Libro.Titulo}-Autor: {Libro.Autor}-Precio Ejemplar:{Precio}";
         }
+
+        public string MostrarEnCombo
+        {
+            get { return $"ejemplar del libro{Libro.Titulo}- fecha Alta:{FechaAlta}-Precio:{Precio}"; }
+        }
     }
 }

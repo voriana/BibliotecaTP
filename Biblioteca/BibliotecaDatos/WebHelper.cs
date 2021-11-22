@@ -20,7 +20,7 @@ namespace BibliotecaDatos
             client = new WebClient();
             client.Encoding = Encoding.UTF8;
             rutaBase = "https://cai-api.azurewebsites.net/api/v1/";
-            rutaBase = ConfigurationManager.AppSettings["URL_API"];
+            //rutaBase = ConfigurationManager.AppSettings["URL_API"];
 
             client.Headers.Add("ContentType", "application/json");
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
