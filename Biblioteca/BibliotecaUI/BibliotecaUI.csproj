@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAltaLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaLibro.Designer.cs">
+      <DependentUpon>FrmAltaLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListarLibros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListarLibros.Designer.cs">
+      <DependentUpon>FrmListarLibros.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAltaLibro.resx">
+      <DependentUpon>FrmAltaLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListarLibros.resx">
+      <DependentUpon>FrmListarLibros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +105,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
+      <Project>{3316d274-ba7b-4952-a752-cdd921d32975}</Project>
+      <Name>BibliotecaEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaNegocio\BibliotecaNegocio.csproj">
+      <Project>{fc547252-57c4-4556-8b48-83fd2ddb0912}</Project>
+      <Name>BibliotecaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

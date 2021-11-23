@@ -14,18 +14,42 @@ namespace BibliotecaUI
     {
         private FrmPrestamo prestamo;
         //private FrmCliente cliente;
-        //private FrmLibro libro;
+        private FrmAltaLibro libro;
+        private FrmListarLibros _frmListar;
         //private FrmEjemplar ejemplar;
         public Principal()
         {
             InitializeComponent();
             prestamo = new FrmPrestamo(this);
+            libro = new FrmAltaLibro(this);
+            _frmListar = new FrmListarLibros(this);
         }
 
-        private void btPrestamos_Click(object sender, EventArgs e)
+     
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAltaPrestamo_Click(object sender, EventArgs e)
         {
             prestamo.Show();
             this.Hide();
+        }
+
+        private void btnAltaLibro_Click(object sender, EventArgs e)
+        {
+            libro.Show();
+            this.Hide();
+        }
+
+        private void btnListarLibros_Click(object sender, EventArgs e)
+        {
+            _frmListar.Show();
+            this.Hide();
+            
+            
         }
     }
 }
