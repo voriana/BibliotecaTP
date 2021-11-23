@@ -34,15 +34,16 @@ namespace BibliotecaNegocio
             _ejemplares = _mapper.GetEjemplares();
             _libros = _libroMapper.GetLibros();
            
-            foreach( var libro in _libros)
+            foreach( var ejemplar in _ejemplares)
             {
-                foreach(var ejemplar in _ejemplares)
+               foreach(var libro in _libros)
                 {
-                    if (ejemplar.Libros.Id== libro.Id)
+                    if (ejemplar.Libros is null)
                     {
-                        ejemplar.Libros= libro;
+                        ejemplar.Libros = libro;
                     }
-                }
+                   
+               }
             }
             return _ejemplares;
         }

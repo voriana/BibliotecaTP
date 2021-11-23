@@ -57,10 +57,11 @@ namespace BibliotecaUI
         }
         private void CargarComboEjemplar()
         {
-             
+            _ejemplares = _ejemplarServicio.TraerLibrosEjemplares();
             cbEjemplar.DataSource = null;
-            cbEjemplar.DataSource = _ejemplarServicio.TraerLibrosEjemplares();
+            cbEjemplar.DataSource = _ejemplares;
             cbEjemplar.DisplayMember = "MostrarEnCombo";
+            cbEjemplar.ValueMember = "Id";
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

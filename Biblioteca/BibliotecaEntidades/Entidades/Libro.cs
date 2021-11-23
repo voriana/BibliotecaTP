@@ -31,6 +31,10 @@ namespace BibliotecaEntidades.Entidades
             _idEjemplar = idEjemplar;
         }
 
+        public Libro()
+        {
+        }
+
         [DataMember(Name = "id")]
         public int Id { get => _id; set => _id = value; }
         [DataMember(Name = "titulo")]
