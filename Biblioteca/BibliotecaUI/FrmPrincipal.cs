@@ -16,11 +16,13 @@ namespace BibliotecaUI
         //private FrmCliente cliente;
         private FrmAltaLibro libro;
         private FrmListarLibros _frmListar;
+
         private Alta_Ejemplar _Ejemplar;
         private FrmListarEjemplar __ListarEjemplar;
         private FrmAltaCliente _altaCliente;
         private Clientes _listarClientes;
 
+        //private FrmEjemplar ejemplar;
 
         public Principal()
         {
@@ -28,6 +30,7 @@ namespace BibliotecaUI
             prestamo = new FrmPrestamo(this);
             libro = new FrmAltaLibro(this);
             _frmListar = new FrmListarLibros(this);
+
             _Ejemplar = new Alta_Ejemplar();
             __ListarEjemplar = new FrmListarEjemplar(this);
             _altaCliente = new FrmAltaCliente(this);
@@ -35,7 +38,14 @@ namespace BibliotecaUI
         }
 
   
-      
+
+     
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void btnAltaPrestamo_Click(object sender, EventArgs e)
         {
@@ -86,5 +96,6 @@ namespace BibliotecaUI
         {
 
         }
+
     }
 }

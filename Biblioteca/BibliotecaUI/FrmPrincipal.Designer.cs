@@ -73,7 +73,9 @@ namespace BibliotecaUI
             this.btnListarCliente.TabIndex = 3;
             this.btnListarCliente.Text = "Listar Clientes";
             this.btnListarCliente.UseVisualStyleBackColor = true;
+
             this.btnListarCliente.Click += new System.EventHandler(this.btnListarCliente_Click);
+
             // 
             // btnAltaCliente
             // 
@@ -86,6 +88,7 @@ namespace BibliotecaUI
             this.btnAltaCliente.Text = "Alta Cliente";
             this.btnAltaCliente.UseVisualStyleBackColor = true;
             this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
+
             // 
             // groupBox1
             // 
@@ -149,6 +152,7 @@ namespace BibliotecaUI
             this.btnListarEjemplar.Text = "Listar Ejemplares";
             this.btnListarEjemplar.UseVisualStyleBackColor = true;
             this.btnListarEjemplar.Click += new System.EventHandler(this.btnListarEjemplar_Click);
+
             // 
             // btnAltaEjemplar
             // 
@@ -157,11 +161,13 @@ namespace BibliotecaUI
             this.btnAltaEjemplar.Location = new System.Drawing.Point(28, 40);
             this.btnAltaEjemplar.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnAltaEjemplar.Name = "btnAltaEjemplar";
+
             this.btnAltaEjemplar.Size = new System.Drawing.Size(129, 33);
             this.btnAltaEjemplar.TabIndex = 2;
             this.btnAltaEjemplar.Text = "Alta Ejemplar";
             this.btnAltaEjemplar.UseVisualStyleBackColor = true;
             this.btnAltaEjemplar.Click += new System.EventHandler(this.btnAltaEjemplar_Click);
+
             // 
             // gbAltaLibro
             // 
@@ -174,7 +180,9 @@ namespace BibliotecaUI
             this.gbAltaLibro.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.gbAltaLibro.Name = "gbAltaLibro";
             this.gbAltaLibro.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
+
             this.gbAltaLibro.Size = new System.Drawing.Size(177, 141);
+
             this.gbAltaLibro.TabIndex = 1;
             this.gbAltaLibro.TabStop = false;
             this.gbAltaLibro.Text = "Módulo Libro";
@@ -213,14 +221,18 @@ namespace BibliotecaUI
             this.label1.Location = new System.Drawing.Point(21, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
+
             this.label1.Size = new System.Drawing.Size(292, 32);
+
             this.label1.TabIndex = 2;
             this.label1.Text = "OPCIONES DEL SISTEMA";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Principal
             // 
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
+
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(448, 403);

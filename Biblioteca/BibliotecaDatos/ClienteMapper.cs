@@ -20,8 +20,8 @@ namespace BibliotecaDatos
 
         public List<Cliente> GetClientes()
         {
-           
-            string json = WebHelper.Get("cliente");
+            string json = WebHelper.Get("cliente/890175");
+
             List<Cliente> listaObtenida = MapList(json);
             return listaObtenida;
         }
@@ -61,5 +61,7 @@ namespace BibliotecaDatos
             return n;
 
         }
+
+     
     }
 }

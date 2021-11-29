@@ -8,6 +8,7 @@ using BibliotecaEntidades.Entidades;
 using BibliotecaEntidades.Exceptions;
 using BibliotecaEntidades.Modelos;
 
+
 namespace BibliotecaNegocio
 {
     public class EjemplarServicio
@@ -27,15 +28,19 @@ namespace BibliotecaNegocio
             _libroMapper = new LibroMapper();
             _ejemplaresPorID = new List<Ejemplar>();
         }
+      
+ 
         public List<Ejemplar> TraerEjemplares()
         {
-            _ejemplares= _Ejemplarmapper.GetEjemplares();
+            _ejemplares= _mapper.GetEjemplares();
             return _ejemplares;
         }
 
         public List<Ejemplar> TraerLibrosEjemplares() 
         {
+
             _ejemplares = _Ejemplarmapper.GetEjemplares();
+
             _libros = _libroMapper.GetLibros();
            
             foreach( var ejemplar in _ejemplares)
@@ -99,7 +104,6 @@ namespace BibliotecaNegocio
 
             return _ejemplaresPorID;
         }
-
 
 
     }

@@ -19,7 +19,6 @@ namespace BibliotecaNegocio
         {
             _clienteMapper = new ClienteMapper();
             _clientes = new List<Cliente>();
-            
         }
 
         public List<Cliente> TraerClientes()

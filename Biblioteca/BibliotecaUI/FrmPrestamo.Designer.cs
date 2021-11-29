@@ -64,16 +64,23 @@ namespace BibliotecaUI
             // txtIdPrestamo
             // 
             this.txtIdPrestamo.Enabled = false;
+
             this.txtIdPrestamo.Location = new System.Drawing.Point(260, 62);
             this.txtIdPrestamo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdPrestamo.Name = "txtIdPrestamo";
             this.txtIdPrestamo.Size = new System.Drawing.Size(142, 26);
+
+            this.txtIdPrestamo.Location = new System.Drawing.Point(173, 40);
+            this.txtIdPrestamo.Name = "txtIdPrestamo";
+            this.txtIdPrestamo.Size = new System.Drawing.Size(96, 20);
+
             this.txtIdPrestamo.TabIndex = 0;
             // 
             // lbIdPrestamo
             // 
             this.lbIdPrestamo.AutoSize = true;
             this.lbIdPrestamo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.lbIdPrestamo.Location = new System.Drawing.Point(12, 72);
             this.lbIdPrestamo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIdPrestamo.Name = "lbIdPrestamo";
@@ -84,17 +91,21 @@ namespace BibliotecaUI
             // cbClientes
             // 
             this.cbClientes.FormattingEnabled = true;
+
             this.cbClientes.Location = new System.Drawing.Point(22, 43);
             this.cbClientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbClientes.Name = "cbClientes";
             this.cbClientes.Size = new System.Drawing.Size(289, 28);
+
             this.cbClientes.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+
             this.label1.Location = new System.Drawing.Point(18, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 20);
             this.label1.TabIndex = 3;
@@ -103,17 +114,21 @@ namespace BibliotecaUI
             // cbEjemplar
             // 
             this.cbEjemplar.FormattingEnabled = true;
+
             this.cbEjemplar.Location = new System.Drawing.Point(21, 131);
             this.cbEjemplar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbEjemplar.Name = "cbEjemplar";
             this.cbEjemplar.Size = new System.Drawing.Size(290, 28);
+
             this.cbEjemplar.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+
             this.label2.Location = new System.Drawing.Point(18, 105);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 5;
@@ -122,8 +137,10 @@ namespace BibliotecaUI
             // lbFecPrestamo
             // 
             this.lbFecPrestamo.AutoSize = true;
+
             this.lbFecPrestamo.Location = new System.Drawing.Point(9, 254);
             this.lbFecPrestamo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.lbFecPrestamo.Name = "lbFecPrestamo";
             this.lbFecPrestamo.Size = new System.Drawing.Size(148, 20);
             this.lbFecPrestamo.TabIndex = 6;
@@ -131,8 +148,10 @@ namespace BibliotecaUI
             // 
             // tbfechPrestamo
             // 
+
             this.tbfechPrestamo.Location = new System.Drawing.Point(262, 243);
             this.tbfechPrestamo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.tbfechPrestamo.Name = "tbfechPrestamo";
             this.tbfechPrestamo.Size = new System.Drawing.Size(140, 26);
             this.tbfechPrestamo.TabIndex = 7;
@@ -140,8 +159,10 @@ namespace BibliotecaUI
             // lbFecEntrega
             // 
             this.lbFecEntrega.AutoSize = true;
+
             this.lbFecEntrega.Location = new System.Drawing.Point(12, 305);
             this.lbFecEntrega.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.lbFecEntrega.Name = "lbFecEntrega";
             this.lbFecEntrega.Size = new System.Drawing.Size(229, 20);
             this.lbFecEntrega.TabIndex = 8;
@@ -149,8 +170,10 @@ namespace BibliotecaUI
             // 
             // tbfecEntrega
             // 
+
             this.tbfecEntrega.Location = new System.Drawing.Point(262, 294);
             this.tbfecEntrega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.tbfecEntrega.Name = "tbfecEntrega";
             this.tbfecEntrega.Size = new System.Drawing.Size(140, 26);
             this.tbfecEntrega.TabIndex = 9;
@@ -160,8 +183,10 @@ namespace BibliotecaUI
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlText;
+
             this.btnLimpiar.Location = new System.Drawing.Point(33, 555);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(144, 35);
             this.btnLimpiar.TabIndex = 11;
@@ -174,8 +199,10 @@ namespace BibliotecaUI
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlText;
+
             this.btnVolver.Location = new System.Drawing.Point(606, 555);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(144, 35);
             this.btnVolver.TabIndex = 12;
@@ -186,8 +213,10 @@ namespace BibliotecaUI
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+
             this.radioButton1.Location = new System.Drawing.Point(98, 20);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(106, 24);
             this.radioButton1.TabIndex = 14;
@@ -198,8 +227,10 @@ namespace BibliotecaUI
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+
             this.radioButton2.Location = new System.Drawing.Point(230, 20);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(88, 24);
             this.radioButton2.TabIndex = 15;
@@ -210,8 +241,10 @@ namespace BibliotecaUI
             // lbPlazo
             // 
             this.lbPlazo.AutoSize = true;
+
             this.lbPlazo.Location = new System.Drawing.Point(9, 203);
             this.lbPlazo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.lbPlazo.Name = "lbPlazo";
             this.lbPlazo.Size = new System.Drawing.Size(129, 20);
             this.lbPlazo.TabIndex = 16;
@@ -219,8 +252,10 @@ namespace BibliotecaUI
             // 
             // tbPlazo
             // 
+
             this.tbPlazo.Location = new System.Drawing.Point(262, 194);
             this.tbPlazo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.tbPlazo.Name = "tbPlazo";
             this.tbPlazo.Size = new System.Drawing.Size(140, 26);
             this.tbPlazo.TabIndex = 17;
@@ -230,14 +265,18 @@ namespace BibliotecaUI
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+
             this.button1.Location = new System.Drawing.Point(315, 555);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(144, 35);
             this.button1.TabIndex = 18;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
+
             this.button1.Click += new System.EventHandler(this.button1_Click);
+
             // 
             // gbDatosAltaPrestamo
             // 
@@ -257,11 +296,13 @@ namespace BibliotecaUI
             this.gbDatosAltaPrestamo.Controls.Add(this.lbFecEntrega);
             this.gbDatosAltaPrestamo.Controls.Add(this.txtIdPrestamo);
             this.gbDatosAltaPrestamo.Controls.Add(this.lbIdPrestamo);
+
             this.gbDatosAltaPrestamo.Location = new System.Drawing.Point(348, 18);
             this.gbDatosAltaPrestamo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbDatosAltaPrestamo.Name = "gbDatosAltaPrestamo";
             this.gbDatosAltaPrestamo.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbDatosAltaPrestamo.Size = new System.Drawing.Size(418, 477);
+
             this.gbDatosAltaPrestamo.TabIndex = 20;
             this.gbDatosAltaPrestamo.TabStop = false;
             this.gbDatosAltaPrestamo.Text = "Nuevo Préstamo";
@@ -270,19 +311,23 @@ namespace BibliotecaUI
             // 
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton2);
+
             this.groupBox1.Location = new System.Drawing.Point(8, 405);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Size = new System.Drawing.Size(394, 63);
+
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuario";
             // 
             // tbFecReal
             // 
+
             this.tbFecReal.Location = new System.Drawing.Point(261, 345);
             this.tbFecReal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.tbFecReal.Name = "tbFecReal";
             this.tbFecReal.Size = new System.Drawing.Size(140, 26);
             this.tbFecReal.TabIndex = 26;
@@ -290,8 +335,10 @@ namespace BibliotecaUI
             // lbFecReal
             // 
             this.lbFecReal.AutoSize = true;
+
             this.lbFecReal.Location = new System.Drawing.Point(9, 355);
             this.lbFecReal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.lbFecReal.Name = "lbFecReal";
             this.lbFecReal.Size = new System.Drawing.Size(192, 20);
             this.lbFecReal.TabIndex = 25;
@@ -299,8 +346,11 @@ namespace BibliotecaUI
             // 
             // tbIdEjemplar
             // 
+
             this.tbIdEjemplar.Location = new System.Drawing.Point(262, 148);
             this.tbIdEjemplar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+=======
+
             this.tbIdEjemplar.Name = "tbIdEjemplar";
             this.tbIdEjemplar.Size = new System.Drawing.Size(140, 26);
             this.tbIdEjemplar.TabIndex = 24;
@@ -308,10 +358,12 @@ namespace BibliotecaUI
             // CheckActivo
             // 
             this.CheckActivo.AutoSize = true;
+
             this.CheckActivo.Location = new System.Drawing.Point(321, 15);
             this.CheckActivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CheckActivo.Name = "CheckActivo";
             this.CheckActivo.Size = new System.Drawing.Size(78, 24);
+
             this.CheckActivo.TabIndex = 25;
             this.CheckActivo.Text = "Activo";
             this.CheckActivo.UseVisualStyleBackColor = true;
@@ -319,8 +371,10 @@ namespace BibliotecaUI
             // lbIdEjemplar
             // 
             this.lbIdEjemplar.AutoSize = true;
+
             this.lbIdEjemplar.Location = new System.Drawing.Point(9, 152);
             this.lbIdEjemplar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.lbIdEjemplar.Name = "lbIdEjemplar";
             this.lbIdEjemplar.Size = new System.Drawing.Size(89, 20);
             this.lbIdEjemplar.TabIndex = 23;
@@ -329,8 +383,10 @@ namespace BibliotecaUI
             // lbIdCliente
             // 
             this.lbIdCliente.AutoSize = true;
+
             this.lbIdCliente.Location = new System.Drawing.Point(9, 112);
             this.lbIdCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
             this.lbIdCliente.Name = "lbIdCliente";
             this.lbIdCliente.Size = new System.Drawing.Size(76, 20);
             this.lbIdCliente.TabIndex = 22;
@@ -338,8 +394,10 @@ namespace BibliotecaUI
             // 
             // tbIdCliente
             // 
+
             this.tbIdCliente.Location = new System.Drawing.Point(262, 102);
             this.tbIdCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+
             this.tbIdCliente.Name = "tbIdCliente";
             this.tbIdCliente.Size = new System.Drawing.Size(140, 26);
             this.tbIdCliente.TabIndex = 21;
@@ -347,11 +405,13 @@ namespace BibliotecaUI
             // lstPrestamos
             // 
             this.lstPrestamos.FormattingEnabled = true;
+
             this.lstPrestamos.ItemHeight = 20;
             this.lstPrestamos.Location = new System.Drawing.Point(21, 186);
             this.lstPrestamos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstPrestamos.Name = "lstPrestamos";
             this.lstPrestamos.Size = new System.Drawing.Size(290, 304);
+
             this.lstPrestamos.TabIndex = 21;
             // 
             // FrmPrestamo
@@ -360,7 +420,9 @@ namespace BibliotecaUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+
             this.ClientSize = new System.Drawing.Size(784, 626);
+
             this.Controls.Add(this.lstPrestamos);
             this.Controls.Add(this.gbDatosAltaPrestamo);
             this.Controls.Add(this.button1);

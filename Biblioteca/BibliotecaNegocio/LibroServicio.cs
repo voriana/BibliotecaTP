@@ -43,6 +43,7 @@ namespace BibliotecaNegocio
              return _libroMapper.GetLibros();
         }
 
+
         public Libro TraerLibroPorId(int id)
         {
 
@@ -62,5 +63,6 @@ namespace BibliotecaNegocio
 
         
         }
+
     }
 }
