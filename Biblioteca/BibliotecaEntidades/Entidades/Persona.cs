@@ -42,21 +42,14 @@ namespace BibliotecaEntidades.Entidades
         public string Telefono { get => _telefono; set => _telefono = value; }
         public string Mail { get => _mail; set => _mail = value; }
 
-
-        public string DatosPersonales()
-        {
-            return string.Format($"Dni:{this.Dni} - Nombre:{this.Nombre} - Apellido{this.Apellido}");
-        }
+   
           
-        public string DatosContacto()
-        {
-            return $"Mail{this.Mail}- Telefono {this.Telefono}- Direccion {this.Direccion}";
-        }
+      
         public override string ToString()
         {
-            return DatosPersonales()+ DatosContacto();
+            return string.Format($"Dni:{this.Dni} - Nombre:{this.Nombre} - Apellido:{this.Apellido}");
         }
-
+        
 
     }
 }
