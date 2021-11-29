@@ -47,11 +47,12 @@
     <Compile Include="Entidades\Libro.cs" />
     <Compile Include="Entidades\Persona.cs" />
     <Compile Include="Entidades\Prestamo.cs" />
+    <Compile Include="Exceptions\ErrorAlta.cs" />
+    <Compile Include="Exceptions\ClienteRegistradoException.cs" />
+    <Compile Include="Exceptions\TransactionErrorException.cs" />
     <Compile Include="Modelos\TransactionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Excepciones\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

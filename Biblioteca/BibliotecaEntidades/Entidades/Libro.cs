@@ -17,7 +17,7 @@ namespace BibliotecaEntidades.Entidades
         private string _editorial;
         private int _paginas;
         private string _tema;
-        private int _idEjemplar;
+      
 
         public Libro(int id, string titulo, string autor, int edicion, string editorial, int paginas, string tema, int idEjemplar)
         {
@@ -28,7 +28,7 @@ namespace BibliotecaEntidades.Entidades
             _editorial = editorial;
             _paginas = paginas;
             _tema = tema;
-            _idEjemplar = idEjemplar;
+           
         }
 
         public Libro()
@@ -44,17 +44,24 @@ namespace BibliotecaEntidades.Entidades
         public string Editorial { get => _editorial; set => _editorial = value; }
         public int Paginas { get => _paginas; set => _paginas = value; }
         public string Tema { get => _tema; set => _tema = value; }
-        public int IdEjemplar { get => _idEjemplar; set => _idEjemplar = value; }
-
+     
         public override string ToString()
         {
-            return $"Id:{Id}-Autor:{Autor}-Titulo:{Titulo}-Tema:{Tema}";
+            return $"Id:{Id}-Autor:{Autor}-Titulo:{Titulo}";
         }
         public string MostrarEnlista
         {
             get { return $"Titulo:{Titulo}-Autor:{Autor}"; }
         }
 
+        public String MostrarComboAltaEjemplar
+        {
+            get
+            {
+                return $"IDLibro:{Id}-Titulo:{Titulo}-Autor:{Autor}"; 
+            }
+        }
         
+
     }
 }

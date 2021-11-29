@@ -42,6 +42,27 @@ namespace BibliotecaNegocio
         {
              return _libroMapper.GetLibros();
         }
-     
+
+
+        public Libro TraerLibroPorId(int id)
+        {
+
+            List<Libro> _libros = _libroMapper.GetLibros();
+            Libro _libro = new Libro();
+
+            foreach (Libro l in _libros)
+            {
+                if (l.Id == id)
+                {
+                    _libro = l;
+                }    
+            
+            }
+
+            return _libro;
+
+        
+        }
+
     }
 }
