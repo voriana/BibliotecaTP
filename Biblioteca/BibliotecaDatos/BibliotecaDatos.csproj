@@ -52,13 +52,13 @@
     <Compile Include="WebHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
       <Project>{3316d274-ba7b-4952-a752-cdd921d32975}</Project>
       <Name>BibliotecaEntidades</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

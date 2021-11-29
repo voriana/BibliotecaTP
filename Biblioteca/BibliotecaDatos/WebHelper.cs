@@ -12,81 +12,84 @@ namespace BibliotecaDatos
 {
     public static class WebHelper
     {
-        static WebClient client;
-        static string rutaBase;
 
-        static WebHelper()
-        {
-            client = new WebClient();
-            client.Encoding = Encoding.UTF8;
-            rutaBase = "https://cai-api.azurewebsites.net/api/v1/";
-            //rutaBase = ConfigurationManager.AppSettings["URL_API"];
+            static WebClient client;
+            static string rutaBase;
 
-            client.Headers.Add("ContentType", "application/json");
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-        }
-
-        public static string Get(string url)
-        {
-            var uri = rutaBase + url;
-
-            var responseString = client.DownloadString(uri);
-
-            return responseString;
-        }
-
-        public static string Post(string url, NameValueCollection parametros)
-        {
-            string uri = rutaBase + url;
-
-            try
+            static WebHelper()
             {
-                var response = client.UploadValues(uri, parametros);
+                client = new WebClient();
+                client.Encoding = Encoding.UTF8;
+                rutaBase = "https://cai-api.azurewebsites.net/api/v1/";
+                //rutaBase = ConfigurationManager.AppSettings["URL_API"];
 
-                var responseString = Encoding.Default.GetString(response);
+                client.Headers.Add("ContentType", "application/json");
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            }
+
+            public static string Get(string url)
+            {
+                var uri = rutaBase + url;
+
+                var responseString = client.DownloadString(uri);
 
                 return responseString;
             }
-            catch (Exception ex)
+
+            public static string Post(string url, NameValueCollection parametros)
             {
-                return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
+                string uri = rutaBase + url;
+
+                try
+                {
+                    var response = client.UploadValues(uri, parametros);
+
+                    var responseString = Encoding.Default.GetString(response);
+
+                    return responseString;
+                }
+                catch (Exception ex)
+                {
+                    return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
+                }
             }
-        }
 
-        public static string Put(string url, NameValueCollection parametros)
-        {
-            string uri = rutaBase + url;
-
-            try
+            public static string Put(string url, NameValueCollection parametros)
             {
-                var response = client.UploadValues(uri, "PUT", parametros);
+                string uri = rutaBase + url;
 
-                var responseString = Encoding.Default.GetString(response);
+                try
+                {
+                    var response = client.UploadValues(uri, "PUT", parametros);
 
-                return responseString;
+                    var responseString = Encoding.Default.GetString(response);
+
+                    return responseString;
+                }
+                catch (Exception ex)
+                {
+                    return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
+                }
             }
-            catch (Exception ex)
+
+            public static string Delete(string url, NameValueCollection parametros)
             {
-                return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
+                string uri = rutaBase + url;
+
+                try
+                {
+                    var response = client.UploadValues(uri, "DELETE", parametros);
+
+                    var responseString = Encoding.Default.GetString(response);
+
+                    return responseString;
+                }
+                catch (Exception ex)
+                {
+                    return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
+                }
             }
-        }
-
-        public static string Delete(string url, NameValueCollection parametros)
-        {
-            string uri = rutaBase + url;
-
-            try
-            {
-                var response = client.UploadValues(uri, "DELETE", parametros);
-
-                var responseString = Encoding.Default.GetString(response);
-
-                return responseString;
-            }
-            catch (Exception ex)
-            {
-                return "{ \"isOk\":false,\"id\":-1,\"error\":\"Error en el llamado al servicio\"}";
-            }
-        }
     }
+    
+
 }

@@ -35,4 +35,5 @@ namespace BibliotecaEntidades.Entidades
         public DateTime FechaDevolucionTentativa { get => _fechaDevolucionTentativa; set => _fechaDevolucionTentativa = value; }
         public DateTime FechaDevolucionReal { get => _fechaDevolucionReal; set => _fechaDevolucionReal = value; }
     }
+    
 }

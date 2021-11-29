@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAltaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaCliente.Designer.cs">
+      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAltaEjemplar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAltaEjemplar.Designer.cs">
+      <DependentUpon>FrmAltaEjemplar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAltaLibro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAltaLibro.Designer.cs">
       <DependentUpon>FrmAltaLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListarClientes.Designer.cs">
+      <DependentUpon>FrmListarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListarEjemplar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListarEjemplar.Designer.cs">
+      <DependentUpon>FrmListarEjemplar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmListarLibros.cs">
       <SubType>Form</SubType>
@@ -72,8 +96,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAltaCliente.resx">
+      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAltaEjemplar.resx">
+      <DependentUpon>FrmAltaEjemplar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAltaLibro.resx">
       <DependentUpon>FrmAltaLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListarClientes.resx">
+      <DependentUpon>FrmListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListarEjemplar.resx">
+      <DependentUpon>FrmListarEjemplar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListarLibros.resx">
       <DependentUpon>FrmListarLibros.cs</DependentUpon>
@@ -107,6 +143,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BibliotecaDatos\BibliotecaDatos.csproj">
+      <Project>{B0E9F2D1-CD8C-4635-BE59-3B0C165E7D7C}</Project>
+      <Name>BibliotecaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
       <Project>{3316d274-ba7b-4952-a752-cdd921d32975}</Project>
       <Name>BibliotecaEntidades</Name>
