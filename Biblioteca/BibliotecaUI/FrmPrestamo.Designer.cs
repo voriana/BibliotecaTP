@@ -275,7 +275,7 @@ namespace BibliotecaUI
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
 
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+           
 
             // 
             // gbDatosAltaPrestamo
@@ -349,7 +349,7 @@ namespace BibliotecaUI
 
             this.tbIdEjemplar.Location = new System.Drawing.Point(262, 148);
             this.tbIdEjemplar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-=======
+
 
             this.tbIdEjemplar.Name = "tbIdEjemplar";
             this.tbIdEjemplar.Size = new System.Drawing.Size(140, 26);

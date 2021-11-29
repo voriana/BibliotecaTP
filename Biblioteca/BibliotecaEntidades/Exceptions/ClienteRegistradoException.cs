@@ -10,7 +10,6 @@ namespace BibliotecaEntidades.Exceptions
     {
         public ClienteRegistradoException() : base("El cliente ya esta Registado")
         {
-
         }
     }
 }

@@ -32,7 +32,7 @@ namespace BibliotecaNegocio
  
         public List<Ejemplar> TraerEjemplares()
         {
-            _ejemplares= _mapper.GetEjemplares();
+            _ejemplares= _Ejemplarmapper.GetEjemplares();
             return _ejemplares;
         }
 

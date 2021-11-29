@@ -40,7 +40,6 @@ namespace BibliotecaUI
             // _lstLibros
             // 
             this._lstLibros.FormattingEnabled = true;
-
             this._lstLibros.ItemHeight = 28;
             this._lstLibros.Location = new System.Drawing.Point(51, 24);
             this._lstLibros.Margin = new System.Windows.Forms.Padding(4);
@@ -64,8 +63,6 @@ namespace BibliotecaUI
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(157, 34);
-
-
             this.textBox1.TabIndex = 2;
             // 
             // label1
@@ -75,7 +72,6 @@ namespace BibliotecaUI
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 28);
-
             this.label1.TabIndex = 3;
             this.label1.Text = "Busqueda por Autor";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -93,7 +89,6 @@ namespace BibliotecaUI
             // 
             // FrmListarLibros
             // 
-
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
@@ -110,6 +105,7 @@ namespace BibliotecaUI
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmListarLibros";
             this.Text = "Libros Existentes";
+            this.Load += new System.EventHandler(this.FrmListarLibros_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

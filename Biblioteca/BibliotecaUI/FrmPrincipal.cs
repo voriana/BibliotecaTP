@@ -92,10 +92,7 @@ namespace BibliotecaUI
             this.Hide();
         }
 
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
+      
 
     }
 }

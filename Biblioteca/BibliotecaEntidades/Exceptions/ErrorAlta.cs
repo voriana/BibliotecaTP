@@ -10,7 +10,7 @@ namespace BibliotecaEntidades.Exceptions
     {
         public ErrorAlta() : base("Error En el alta")
         {
-
+            
         }
     }
 }

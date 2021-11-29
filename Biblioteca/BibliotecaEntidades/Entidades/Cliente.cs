@@ -25,7 +25,7 @@ namespace BibliotecaEntidades.Entidades
             _usuario = usuario;
 
         }
-
+        
         public Cliente()
         {
         }

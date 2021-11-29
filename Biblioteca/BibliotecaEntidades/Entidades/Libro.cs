@@ -61,7 +61,7 @@ namespace BibliotecaEntidades.Entidades
                 return $"IDLibro:{Id}-Titulo:{Titulo}-Autor:{Autor}"; 
             }
         }
-
+        
 
     }
 }

@@ -25,5 +25,9 @@ namespace BibliotecaUI
             this.Owner.Show();
         }
 
+        private void FrmListarLibros_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
