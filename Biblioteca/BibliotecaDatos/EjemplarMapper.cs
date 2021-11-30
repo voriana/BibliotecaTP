@@ -38,10 +38,10 @@ namespace BibliotecaDatos
         private NameValueCollection ReverseMap(Ejemplar ejemplar)
         {
             NameValueCollection n = new NameValueCollection();
-            n.Add("Id Ejemplar", "0");
+            n.Add("id", ejemplar.Id.ToString());
             n.Add("Observaciones", ejemplar.Observaciones);
             n.Add("Precio", ejemplar.Precio.ToString("0.00"));
-            n.Add("ID Libro", ejemplar.IdLibro.ToString());
+            n.Add("idLibro", ejemplar.IdLibro.ToString());
             n.Add("Usuario", "889350");
 
             return n;

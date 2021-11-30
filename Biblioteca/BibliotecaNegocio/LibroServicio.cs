@@ -18,8 +18,9 @@ namespace BibliotecaNegocio
             _libroMapper = new LibroMapper();
         }
 
-        public TransactionResult AgregarLibro(int id, string autor, string titulo, string tema, string editorial, int edicion, int pags)
+        public TransactionResult AgregarLibro( string autor, string titulo, string tema, string editorial, int edicion, int pags)
         {
+            int id = 0;
             //validaciones de negocio
             //anio actual
             int anio = DateTime.Now.Year;
@@ -32,7 +33,7 @@ namespace BibliotecaNegocio
                 throw new Exception("Un libro debe contener al menos una pagina");
             }
 
-            Libro libro = new Libro(id, titulo, autor, edicion, editorial, pags, tema,1);
+            Libro libro = new Libro(id, titulo, autor, edicion, editorial, pags, tema);
             TransactionResult resultado = _libroMapper.AltaLibro(libro);
             return resultado;
 
@@ -63,6 +64,12 @@ namespace BibliotecaNegocio
 
         
         }
-
+        public int GenerarIdLibro()
+        {
+            int IdLibro;
+            Random n = new Random();
+            IdLibro = n.Next(100, 200);
+            return IdLibro;
+        }
     }
 }
