@@ -42,7 +42,7 @@ namespace BibliotecaUI
 
             _libros = _libroMapper.GetLibros();
             cmbLibros.DataSource = _libros;
-            cmbLibros.DisplayMember = "MostrarComboAltaEjemplar";
+            cmbLibros.DisplayMember = "MostrarBusquedaLibro";
 
 
         }
@@ -76,7 +76,7 @@ namespace BibliotecaUI
             Libro _libro = (Libro)cmbLibros.SelectedItem;
             List<Ejemplar> _ejemplares = _ejemplarServicio.TraerEjemplaresPorIdLibro(_libro.Id);
             lstbEjemplares.DataSource = _ejemplares;
-            lstbEjemplares.DisplayMember = "MostrarEnCombo";
+            
 
 
         }
@@ -85,6 +85,12 @@ namespace BibliotecaUI
         {
             cmbLibros.SelectedItem = null;
             lstbEjemplares.DataSource = null;
+        }
+
+        private void _btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Owner.Show();
         }
     }
 }

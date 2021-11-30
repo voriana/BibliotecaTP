@@ -13,7 +13,7 @@ namespace BibliotecaUI
     public partial class Principal : Form
     {
         private FrmPrestamo prestamo;
-        //private FrmCliente cliente;
+        private FrmListarPrestamos _listarPrestamos;
         private FrmAltaLibro libro;
         private FrmListarLibros _frmListar;
 
@@ -35,6 +35,7 @@ namespace BibliotecaUI
             __ListarEjemplar = new FrmListarEjemplar(this);
             _altaCliente = new FrmAltaCliente(this);
             _listarClientes = new Clientes(this);
+            _listarPrestamos = new FrmListarPrestamos(this);
         }
 
   
@@ -92,7 +93,10 @@ namespace BibliotecaUI
             this.Hide();
         }
 
-      
-
+        private void btnListarPres_Click(object sender, EventArgs e)
+        {
+            _listarPrestamos.Show();
+            this.Hide();
+        }
     }
 }

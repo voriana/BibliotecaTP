@@ -57,11 +57,6 @@ namespace BibliotecaNegocio
             return _ejemplares;
         }
 
-        private List<Libro> TraerLibros()
-        {
-            _libros = _libroMapper.GetLibros();
-            return _libros;
-        }
 
         public TransactionResult AltaEjemplar(Ejemplar _ejemplarNuevo)
         {
@@ -99,11 +94,24 @@ namespace BibliotecaNegocio
                     _ejemplaresPorID.Add(e);
                 }
 
-
-             }
+            }
 
             return _ejemplaresPorID;
         }
+
+        //Devolver ejemplar
+         public Ejemplar DevolverEjemplar(int id)
+         {
+            Ejemplar ejemplar = new Ejemplar();
+            foreach(Ejemplar ejem in _ejemplares)
+            {
+                if (ejem.Id== id)
+                {
+                    ejemplar = ejem;
+                }
+            }
+            return ejemplar;
+         }
 
 
     }

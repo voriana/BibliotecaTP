@@ -19,7 +19,7 @@ namespace BibliotecaEntidades.Entidades
         private string _tema;
       
 
-        public Libro(int id, string titulo, string autor, int edicion, string editorial, int paginas, string tema, int idEjemplar)
+        public Libro(int id, string titulo, string autor, int edicion, string editorial, int paginas, string tema)
         {
             _id = id;
             _titulo = titulo;
@@ -39,10 +39,15 @@ namespace BibliotecaEntidades.Entidades
         public int Id { get => _id; set => _id = value; }
         [DataMember(Name = "titulo")]
         public string Titulo { get => _titulo; set => _titulo = value; }
+        [DataMember(Name = "Autor")]
         public string Autor { get => _autor; set => _autor = value; }
+        [DataMember(Name = "Edicion")]
         public int Edicion { get => _edicion; set => _edicion = value; }
+        [DataMember(Name = "Editorial")]
         public string Editorial { get => _editorial; set => _editorial = value; }
+        [DataMember(Name = "Paginas")]
         public int Paginas { get => _paginas; set => _paginas = value; }
+        [DataMember(Name = "Tema")]
         public string Tema { get => _tema; set => _tema = value; }
      
         public override string ToString()
@@ -51,14 +56,14 @@ namespace BibliotecaEntidades.Entidades
         }
         public string MostrarEnlista
         {
-            get { return $"Titulo:{Titulo}-Autor:{Autor}"; }
+            get { return $"{Id}-{this._titulo}-Autor:{this._autor}"; }
         }
 
-        public String MostrarComboAltaEjemplar
+        public String MostrarBusquedaLibro
         {
             get
             {
-                return $"IDLibro:{Id}-Titulo:{Titulo}-Autor:{Autor}"; 
+                return $"IDLibro:{this._id}-Titulo:{this._titulo}-Autor:{this._autor}"; 
             }
         }
         

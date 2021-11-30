@@ -20,7 +20,7 @@ namespace BibliotecaDatos
 
         public List<Cliente> GetClientes()
         {
-            string json = WebHelper.Get("cliente/890175");
+            string json = WebHelper.Get("cliente");
 
             List<Cliente> listaObtenida = MapList(json);
             return listaObtenida;

@@ -94,8 +94,10 @@ namespace BibliotecaUI
         private Ejemplar CargarEjemplar()
         {
             Ejemplar _nuevoEjemplar = new Ejemplar();
-            Libro libro = (Libro)cmbLibros.SelectedItem;
-            _nuevoEjemplar.IdLibro = libro.Id;
+            Libro libro = new Libro();
+            libro = (Libro)cmbLibros.SelectedItem;
+            _nuevoEjemplar.IdLibro = libro.Id;           
+            _nuevoEjemplar.Libros =_libroServicio.TraerLibroPorId(_nuevoEjemplar.IdLibro);
             _nuevoEjemplar.Observaciones = txbObservaciones.Text;
             _nuevoEjemplar.Precio = double.Parse(txbPrecio.Text);
             return _nuevoEjemplar;
@@ -107,7 +109,13 @@ namespace BibliotecaUI
             LstbEjemplares.DataSource = null;
             _ejemplares= _ejemplarMapper.GetEjemplares();
             LstbEjemplares.DataSource = _ejemplares;
+            LstbEjemplares.DisplayMember = "MostrarEnCombo";
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Owner.Show();
+        }
     }
 }

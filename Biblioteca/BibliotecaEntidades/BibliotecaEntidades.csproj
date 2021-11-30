@@ -50,6 +50,7 @@
     <Compile Include="Exceptions\ErrorAlta.cs" />
     <Compile Include="Exceptions\ClienteRegistradoException.cs" />
     <Compile Include="Exceptions\TransactionErrorException.cs" />
+    <Compile Include="Modelos\OperacionModel.cs" />
     <Compile Include="Modelos\TransactionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
