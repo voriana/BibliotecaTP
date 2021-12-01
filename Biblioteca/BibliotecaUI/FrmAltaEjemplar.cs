@@ -19,18 +19,18 @@ namespace BibliotecaUI
     {
      
         private EjemplarServicio _ejemplarServicio;
-       
         private LibroServicio _libroServicio;
-        private List<Ejemplar> _ejemplares;
-        
-        
+        List<Ejemplar> _ejemplares;
+
+
+
         public Alta_Ejemplar()
         {
            
             _ejemplarServicio = new EjemplarServicio();
             _libroServicio = new LibroServicio();
             _ejemplares = new List<Ejemplar>();
-           
+
             InitializeComponent();
          
         }
