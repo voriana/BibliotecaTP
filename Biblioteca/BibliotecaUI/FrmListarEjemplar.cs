@@ -1,4 +1,4 @@
-﻿using BibliotecaDatos;
+﻿
 using BibliotecaEntidades.Entidades;
 using BibliotecaNegocio;
 using System;
@@ -15,15 +15,13 @@ namespace BibliotecaUI
 {
     public partial class FrmListarEjemplar : Form
     {
-        private EjemplarMapper _ejemplarMapper;
-        private LibroMapper _libroMapper;
+       
         private LibroServicio _libroServicio;
         private EjemplarServicio _ejemplarServicio;
         private List<Libro> _libros;
         public FrmListarEjemplar(Form principal)
         {
-            _ejemplarMapper = new EjemplarMapper();
-            _libroMapper = new LibroMapper();
+            
             _libroServicio = new LibroServicio();
             _ejemplarServicio = new EjemplarServicio();
             _libros = new List<Libro>();
@@ -40,7 +38,7 @@ namespace BibliotecaUI
         private void CargarLibros()
         {
 
-            _libros = _libroMapper.GetLibros();
+            _libros = _libroServicio.TraerLibros();
             cmbLibros.DataSource = _libros;
             cmbLibros.DisplayMember = "MostrarBusquedaLibro";
 
@@ -76,6 +74,7 @@ namespace BibliotecaUI
             Libro _libro = (Libro)cmbLibros.SelectedItem;
             List<Ejemplar> _ejemplares = _ejemplarServicio.TraerEjemplaresPorIdLibro(_libro.Id);
             lstbEjemplares.DataSource = _ejemplares;
+            lstbEjemplares.DisplayMember = "MostrarEnCombo";
             
 
 

@@ -38,8 +38,8 @@ namespace BibliotecaNegocio
             prestamo.Id=0;
             prestamo.IdCliente = idCliente;
             prestamo.IdEjemplar = idEjemplar;
-            prestamo.Ejemplar = _ejemplarServicio.DevolverEjemplar(idEjemplar);
-            prestamo.Cliente = _clienteServicio.TraerClientePorID(idCliente);
+            //prestamo.Ejemplar = _ejemplarServicio.DevolverEjemplar(idEjemplar);
+            //prestamo.Cliente = _clienteServicio.TraerClientePorID(idCliente);
             prestamo.Activo = activo;
             prestamo.Plazo = plazo;
             prestamo.FechaPrestamo = fechaPres;

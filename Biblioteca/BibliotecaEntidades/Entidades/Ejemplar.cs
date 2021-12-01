@@ -20,7 +20,7 @@ namespace BibliotecaEntidades.Entidades
         public Ejemplar(int id, string observaciones, double precio, DateTime fechaAlta, int idLibro)
         {
             _idEjemplar = id;
-            _libro = new Libro();
+            _libro= new Libro();
             _observaciones = observaciones;
             _precio = precio;
             _fechaAlta = fechaAlta;
@@ -54,7 +54,7 @@ namespace BibliotecaEntidades.Entidades
 
         public string MostrarEnCombo
         {
-            get { return $"PRECIO: {Precio.ToString("0.00")}-LIBRO: {this.IdLibro}-IDEJEMPLAR: {Id.ToString()}"; }
+            get { return $"PRECIO: {Precio.ToString("0.00")}-LIBRO: {this._libro.Autor}-IDEJEMPLAR: {Id.ToString()}"; }
         }
 
        
