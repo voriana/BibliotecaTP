@@ -1,4 +1,4 @@
-﻿using BibliotecaDatos;
+﻿
 using BibliotecaEntidades.Entidades;
 using BibliotecaEntidades.Exceptions;
 using BibliotecaEntidades.Modelos;
@@ -17,18 +17,17 @@ namespace BibliotecaUI
 {
     public partial class Alta_Ejemplar : Form
     {
-        private LibroMapper _libroMapper;
+     
         private EjemplarServicio _ejemplarServicio;
-        private EjemplarMapper _ejemplarMapper;
+       
         private LibroServicio _libroServicio;
         private List<Ejemplar> _ejemplares;
         
         
         public Alta_Ejemplar()
         {
-            _libroMapper = new LibroMapper();
+           
             _ejemplarServicio = new EjemplarServicio();
-            _ejemplarMapper = new EjemplarMapper();
             _libroServicio = new LibroServicio();
             _ejemplares = new List<Ejemplar>();
            
@@ -43,7 +42,7 @@ namespace BibliotecaUI
 
         private void CargarLibros()
         {
-            List<Libro> _libros = _libroMapper.GetLibros();
+            List<Libro> _libros = _libroServicio.TraerLibros();
             cmbLibros.DataSource = _libros;
             cmbLibros.DisplayMember = "MostrarComboAltaEjemplar";
 
@@ -94,8 +93,10 @@ namespace BibliotecaUI
         private Ejemplar CargarEjemplar()
         {
             Ejemplar _nuevoEjemplar = new Ejemplar();
-            Libro libro = (Libro)cmbLibros.SelectedItem;
-            _nuevoEjemplar.IdLibro = libro.Id;
+            Libro libro = new Libro();
+            libro = (Libro)cmbLibros.SelectedItem;
+            _nuevoEjemplar.IdLibro = libro.Id;           
+            _nuevoEjemplar.Libros =_libroServicio.TraerLibroPorId(_nuevoEjemplar.IdLibro);
             _nuevoEjemplar.Observaciones = txbObservaciones.Text;
             _nuevoEjemplar.Precio = double.Parse(txbPrecio.Text);
             return _nuevoEjemplar;
@@ -105,9 +106,15 @@ namespace BibliotecaUI
         private void Refrescar()
         {
             LstbEjemplares.DataSource = null;
-            _ejemplares= _ejemplarMapper.GetEjemplares();
+            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             LstbEjemplares.DataSource = _ejemplares;
+            LstbEjemplares.DisplayMember = "MostrarEnCombo";
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Owner.Show();
+        }
     }
 }

@@ -50,71 +50,32 @@ namespace BibliotecaUI
         //validar campos ingresados.
         public void ValidarCampos()
         {
-           
+            
+            if(string.IsNullOrEmpty(txtAutor.Text) || string.IsNullOrEmpty(txtTitulo.Text) || string.IsNullOrEmpty(txtTema.Text) 
+                || string.IsNullOrEmpty(txtEditorial.Text)|| string.IsNullOrEmpty(txtTema.Text) || string.IsNullOrEmpty(txtPags.Text))
+            {
+                throw new Exception("Todos los campos son obligatorios");
+            }
+            else
+            {
+                if(!int.TryParse(txtEdicion.Text,out int edic))
+                {
+                    throw new Exception("El campo edicion es numerico");
+                }
+                if(!int.TryParse(txtPags.Text,out int pag))
+                {
+                    throw new Exception("La cantidad de paginas debe ser un valor numerico");
+                }
+            }
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try 
             {
-                foreach (Control control in Controls)
-                {
-                    if (control is TextBox)
-                    {
-                        switch (control.Name)
-                        {
-                            case "txtAutor":
-                                if (string.IsNullOrEmpty(txtAutor.Text))
-                                {
-                                    txtAutor.Focus();
-                                    throw new Exception($"El campo {control.Name} no puede estar vacio");
-                                }
-
-                                break;
-                            case "txtTitulo":
-                                if (string.IsNullOrEmpty(txtTitulo.Text))
-                                {
-                                    txtTitulo.Focus();
-                                    throw new Exception($"El campo {control.Name} no puede estar vacio");
-                                }
-
-                                break;
-                            case "txtTema":
-                                if (string.IsNullOrEmpty(txtTema.Text))
-                                {
-                                    txtTema.Focus();
-                                    throw new Exception($"El campo {control.Name} no puede estar vacio");
-                                }
-                                else
-                                {
-                                }
-                                break;
-                            case "txtEdicion": //txtEdicion
-                                if (string.IsNullOrEmpty(txtEdicion.Text) || !int.TryParse(txtEdicion.Text, out int salida))
-                                {
-                                    txtEdicion.Focus();
-                                    throw new Exception("Debe ingresar un valor numerico o el campo esta vacio");
-                                }
-                                break;
-                            case "txtEditorial":
-                                if (string.IsNullOrEmpty(txtEditorial.Text))
-                                {
-                                    txtEditorial.Focus();
-                                    throw new Exception("El campo no puede estar vacio");
-                                }
-                                break;
-                            case "txtPags":
-                                if (string.IsNullOrEmpty(txtPags.Text) && !int.TryParse(txtPags.Text, out int paginas))
-                                {
-                                    txtPags.Focus();
-                                    throw new Exception("El campo no puede estar vacio o debe ser numerico");
-                                }
-                                break;
-                        }
-                    }
-                }
-
-                int id = 0;
+                ValidarCampos();
+                //int id =int.Parse( txtId.Text);
                 string autor= txtAutor.Text;
                 string titulo = txtTitulo.Text;
                 string tema = txtTema.Text;
@@ -122,10 +83,17 @@ namespace BibliotecaUI
                 int edicion = int.Parse(txtEdicion.Text);
                 int pags = int.Parse(txtPags.Text);
 
-                TransactionResult resutaldo =_libroServicio.AgregarLibro(id, autor, titulo, tema, editorial, edicion, pags);
-                MessageBox.Show($"{resutaldo.Id}- usuario agregado");
-                RecargarLista();
-                
+                TransactionResult resutaldo =_libroServicio.AgregarLibro( autor, titulo, tema, editorial, edicion, pags);
+                if (!resutaldo.IsOk)
+                {
+                    throw new Exception($"Erorr{resutaldo.Error}");
+                }
+                else
+                {
+                    MessageBox.Show($"libro agregado a la lista");
+                    RecargarLista();
+
+                }
             }
             catch(Exception ex)
             {
@@ -139,6 +107,7 @@ namespace BibliotecaUI
             lstLibros.DataSource = null;
             lstLibros.DataSource = _libros;
             lstLibros.DisplayMember = "MostrarEnlista";
+            Calculos();
         }
 
        
@@ -146,11 +115,27 @@ namespace BibliotecaUI
         private void FrmAltaLibro_Load(object sender, EventArgs e)
         {
             RecargarLista();
+            CargarIdNuevoLibro();
         }
+
+        private void CargarIdNuevoLibro()
+        {
+           txtId.Text =_libroServicio.GenerarIdLibro().ToString();
+           txtId.Enabled = false;
+        }
+
+      
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
             RecargarLista();
+            //Calculos();
+        }
+        private void Calculos()
+        {
+            OperacionModel operacion = new OperacionModel(_libros);
+            txtCant.Text= operacion.CantidadLibros.ToString();
+            txtCant.Enabled = false;
         }
     }
 }

@@ -16,14 +16,16 @@ namespace BibliotecaEntidades.Entidades
         private double _precio;
         private DateTime _fechaAlta;
         private int _idLibro;
-        public Ejemplar(int id, Libro libro, string observaciones, double precio, DateTime fechaAlta,int idLibro)
+        
+        public Ejemplar(int id, string observaciones, double precio, DateTime fechaAlta, int idLibro)
         {
             _idEjemplar = id;
-            _libro = libro;
+            _libro = new Libro();
             _observaciones = observaciones;
             _precio = precio;
             _fechaAlta = fechaAlta;
             _idLibro = idLibro;
+
         }
 
         public Ejemplar()
@@ -34,7 +36,7 @@ namespace BibliotecaEntidades.Entidades
         public int Id { get => _idEjemplar; set => _idEjemplar = value; }
         [DataMember(Name = "idLibro")]
         public int IdLibro { get => _idLibro; set => _idLibro = value; }
-     
+
         [DataMember(Name = "observaciones")]
         public string Observaciones { get => _observaciones; set => _observaciones = value; }
 
@@ -43,6 +45,8 @@ namespace BibliotecaEntidades.Entidades
         [DataMember(Name = "fechaalta")]
         public DateTime FechaAlta { get => _fechaAlta; set => _fechaAlta = value; }
         public Libro Libros { get => _libro; set => _libro = value; }
+
+            
         public override string ToString()
         {
             return $"Id Ejemplar{Id}-Precio Ejemplar:{Precio}";
@@ -50,8 +54,10 @@ namespace BibliotecaEntidades.Entidades
 
         public string MostrarEnCombo
         {
-            get { return $"PRECIO: {Precio.ToString("0.00")}-LIBRO: {IdLibro.ToString()}-IDEJEMPLAR: {Id.ToString()}"; }
+            get { return $"PRECIO: {Precio.ToString("0.00")}-LIBRO: {this.Libros.Autor}-IDEJEMPLAR: {Id.ToString()}"; }
         }
+
+       
    
     }
 }

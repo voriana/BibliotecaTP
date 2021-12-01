@@ -17,7 +17,7 @@ namespace BibliotecaNegocio
         private List<Libro> _libros;
         private EjemplarMapper _Ejemplarmapper;
         private LibroMapper _libroMapper;
-        private List<Ejemplar> _ejemplaresPorID;
+        //private List<Ejemplar> _ejemplaresPorID;
 
 
         public EjemplarServicio()
@@ -26,7 +26,7 @@ namespace BibliotecaNegocio
             _libros = new List<Libro>();
             _Ejemplarmapper = new EjemplarMapper();
             _libroMapper = new LibroMapper();
-            _ejemplaresPorID = new List<Ejemplar>();
+            //_ejemplaresPorID = new List<Ejemplar>();
         }
       
  
@@ -36,7 +36,7 @@ namespace BibliotecaNegocio
             return _ejemplares;
         }
 
-        public List<Ejemplar> TraerLibrosEjemplares() 
+        public List<Ejemplar> TraerEjemplaresConLibros() 
         {
 
             _ejemplares = _Ejemplarmapper.GetEjemplares();
@@ -47,7 +47,7 @@ namespace BibliotecaNegocio
             {
                foreach(var libro in _libros)
                 {
-                    if (ejemplar.Libros is null)
+                    if (ejemplar.IdLibro ==libro.Id)
                     {
                         ejemplar.Libros = libro;
                     }
@@ -57,11 +57,6 @@ namespace BibliotecaNegocio
             return _ejemplares;
         }
 
-        private List<Libro> TraerLibros()
-        {
-            _libros = _libroMapper.GetLibros();
-            return _libros;
-        }
 
         public TransactionResult AltaEjemplar(Ejemplar _ejemplarNuevo)
         {
@@ -90,7 +85,8 @@ namespace BibliotecaNegocio
 
         public List<Ejemplar> TraerEjemplaresPorIdLibro(int IdLibro)
         {
-            _ejemplares = TraerEjemplares();
+            List<Ejemplar> _ejemplaresPorID = new List<Ejemplar>();
+            _ejemplares = TraerEjemplaresConLibros();
     
             foreach (Ejemplar e in _ejemplares)
             {
@@ -99,11 +95,25 @@ namespace BibliotecaNegocio
                     _ejemplaresPorID.Add(e);
                 }
 
-
-             }
+            }
 
             return _ejemplaresPorID;
         }
+
+        //Devolver ejemplar
+         public Ejemplar DevolverEjemplar(int id)
+         {
+            _ejemplares = TraerEjemplaresConLibros();
+            Ejemplar ejemplar = new Ejemplar();
+            foreach(Ejemplar ejem in _ejemplares)
+            {
+                if (ejem.Id== id)
+                {
+                    ejemplar = ejem;
+                }
+            }
+            return ejemplar;
+         }
 
 
     }

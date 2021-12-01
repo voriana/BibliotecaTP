@@ -82,6 +82,12 @@
     <Compile Include="FrmListarLibros.Designer.cs">
       <DependentUpon>FrmListarLibros.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListarPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListarPrestamos.Designer.cs">
+      <DependentUpon>FrmListarPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <EmbeddedResource Include="FrmListarLibros.resx">
       <DependentUpon>FrmListarLibros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmListarPrestamos.resx">
+      <DependentUpon>FrmListarPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,10 +152,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BibliotecaDatos\BibliotecaDatos.csproj">
-      <Project>{B0E9F2D1-CD8C-4635-BE59-3B0C165E7D7C}</Project>
-      <Name>BibliotecaDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
       <Project>{3316d274-ba7b-4952-a752-cdd921d32975}</Project>
       <Name>BibliotecaEntidades</Name>
