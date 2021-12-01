@@ -152,10 +152,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BibliotecaDatos\BibliotecaDatos.csproj">
-      <Project>{B0E9F2D1-CD8C-4635-BE59-3B0C165E7D7C}</Project>
-      <Name>BibliotecaDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
       <Project>{3316d274-ba7b-4952-a752-cdd921d32975}</Project>
       <Name>BibliotecaEntidades</Name>

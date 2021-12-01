@@ -1,4 +1,4 @@
-﻿using BibliotecaDatos;
+﻿
 using BibliotecaEntidades.Entidades;
 using BibliotecaEntidades.Exceptions;
 using BibliotecaEntidades.Modelos;
@@ -17,18 +17,17 @@ namespace BibliotecaUI
 {
     public partial class Alta_Ejemplar : Form
     {
-        private LibroMapper _libroMapper;
+     
         private EjemplarServicio _ejemplarServicio;
-        private EjemplarMapper _ejemplarMapper;
+       
         private LibroServicio _libroServicio;
         private List<Ejemplar> _ejemplares;
         
         
         public Alta_Ejemplar()
         {
-            _libroMapper = new LibroMapper();
+           
             _ejemplarServicio = new EjemplarServicio();
-            _ejemplarMapper = new EjemplarMapper();
             _libroServicio = new LibroServicio();
             _ejemplares = new List<Ejemplar>();
            
@@ -43,7 +42,7 @@ namespace BibliotecaUI
 
         private void CargarLibros()
         {
-            List<Libro> _libros = _libroMapper.GetLibros();
+            List<Libro> _libros = _libroServicio.TraerLibros();
             cmbLibros.DataSource = _libros;
             cmbLibros.DisplayMember = "MostrarComboAltaEjemplar";
 
@@ -107,7 +106,7 @@ namespace BibliotecaUI
         private void Refrescar()
         {
             LstbEjemplares.DataSource = null;
-            _ejemplares= _ejemplarMapper.GetEjemplares();
+            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             LstbEjemplares.DataSource = _ejemplares;
             LstbEjemplares.DisplayMember = "MostrarEnCombo";
         }
