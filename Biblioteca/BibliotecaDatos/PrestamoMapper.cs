@@ -38,8 +38,8 @@ namespace BibliotecaDatos
         {
             NameValueCollection n = new NameValueCollection();
             n.Add("id", prestamo.Id.ToString());
-            n.Add("idCliente", prestamo.Cliente.Id.ToString());
-            n.Add("idEjemplar", prestamo.Ejemplar.Id.ToString());
+            n.Add("idCliente", prestamo.IdCliente.ToString());
+            n.Add("idEjemplar", prestamo.IdEjemplar.ToString());
             n.Add("Plazo", prestamo.Plazo.ToString());
             n.Add("Activo", prestamo.Activo.ToString());
             n.Add("FechaPrestamo", prestamo.FechaPrestamo.ToString("dd-MM-yyyy"));
