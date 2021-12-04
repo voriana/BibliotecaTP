@@ -60,6 +60,7 @@ namespace BibliotecaEntidades.Entidades
                 }
                 return $"PRECIO: {Precio.ToString("0.00")}-LIBRO: {this._libro.Autor}-IDEJEMPLAR: {Id.ToString()}";
             }
+
         }
 
        
