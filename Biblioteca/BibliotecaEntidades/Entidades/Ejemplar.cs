@@ -54,7 +54,7 @@ namespace BibliotecaEntidades.Entidades
 
         public string MostrarEnCombo
         {
-            get { return $"PRECIO: {Precio.ToString("0.00")}-LIBRO: {this._libro.Autor}-IDEJEMPLAR: {Id.ToString()}"; }
+            get { return $"$: {Precio.ToString("0.00")}ARS-LIBRO: {this._libro.Autor}-IDEJEMPLAR: {Id.ToString()}"; }
         }
 
        

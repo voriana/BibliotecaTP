@@ -48,12 +48,6 @@ namespace BibliotecaEntidades.Entidades
             get { return $"{this.Nombre} - {this.Apellido}"; }
         }
 
-        public string MostrarId
-        {
-            get
-            {
-                return $"{this.Id}";
-            }
-        }
+      
     }
 }

@@ -32,6 +32,7 @@ namespace BibliotecaUI
         {
 
             GenerarIdCliente();
+            Refrescar();
         }
 
         private void GenerarIdCliente()

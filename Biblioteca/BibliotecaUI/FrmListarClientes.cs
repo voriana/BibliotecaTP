@@ -31,7 +31,7 @@ namespace BibliotecaUI
             
             _clientes = _clienteServicio.TraerClientes();
             cmbIDClientes.DataSource = _clientes;
-            cmbIDClientes.DisplayMember = "MostrarId";
+            cmbIDClientes.DisplayMember = "MostrarCombo";
 
         }
 
@@ -91,7 +91,12 @@ namespace BibliotecaUI
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            Limpiar();
+            try
+            { Limpiar(); }
+            catch
+            {
+                MessageBox.Show("Error al limpiar los campos");
+            }
         }
 
         private void Limpiar()
@@ -113,10 +118,15 @@ namespace BibliotecaUI
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
-            this.Owner.Show();
-
+            try
+            {
+                this.Hide();
+                this.Owner.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Error al volver al formulario principal");
+            }
         }
     }
  }
