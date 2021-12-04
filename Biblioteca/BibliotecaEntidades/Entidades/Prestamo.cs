@@ -23,11 +23,11 @@ namespace BibliotecaEntidades.Entidades
         {
         }
 
-        public Prestamo(int id, Cliente cliente, Ejemplar ejemplar, int plazo, DateTime fechaPrestamo, DateTime fechaDevolucionReal, bool activo)
+        public Prestamo(int id,int cliente, int ejemplar, int plazo, DateTime fechaPrestamo, DateTime fechaDevolucionReal, bool activo)
         {
             _id = id;
-            _cliente = cliente;
-            _ejemplar = ejemplar;
+            _idCliente = cliente;
+            _idEjemplar = ejemplar;
             _plazo = plazo;
             _fechaPrestamo = fechaPrestamo;
             _fechaDevolucionReal = fechaDevolucionReal;
@@ -60,7 +60,15 @@ namespace BibliotecaEntidades.Entidades
         {
             get
             {
-                return $"{this.Id}-{this.Cliente.Apellido}-Precio ARGS: {this.Ejemplar.Precio}";
+                if (this.Ejemplar == null)
+                {
+                  
+                    this.Ejemplar = new Ejemplar();
+                    {
+                        this.Ejemplar.Libros = new Libro();
+                    }
+                }
+                return $"{this.Id}-{this.Cliente.Apellido} {this.Cliente.Nombre}-{this.Ejemplar.MostrarEnCombo}-ARGS: {this.Ejemplar.Precio}";
             }
         }
     }

@@ -21,6 +21,7 @@ namespace BibliotecaUI
         {
             InitializeComponent();
             _clienteServicio = new ClienteServicio();
+            this.Owner = principal;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

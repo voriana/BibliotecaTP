@@ -24,13 +24,13 @@ namespace BibliotecaUI
 
 
 
-        public Alta_Ejemplar()
+        public Alta_Ejemplar(Form form)
         {
            
             _ejemplarServicio = new EjemplarServicio();
             _libroServicio = new LibroServicio();
             _ejemplares = new List<Ejemplar>();
-
+            this.Owner = form;
             InitializeComponent();
          
         }

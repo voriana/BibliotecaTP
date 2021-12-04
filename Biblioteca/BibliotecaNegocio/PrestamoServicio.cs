@@ -17,6 +17,7 @@ namespace BibliotecaNegocio
         private List<Prestamo> _prestamos;
         private List<Ejemplar> _ejemplares;
 
+
         public PrestamoServicio()
         {
             _prestamoMapper = new PrestamoMapper();
@@ -24,6 +25,7 @@ namespace BibliotecaNegocio
             _clienteServicio = new ClienteServicio();
             _prestamos = new List<Prestamo>();
             _ejemplares = new List<Ejemplar>();
+ 
 
 
         }
@@ -31,15 +33,13 @@ namespace BibliotecaNegocio
         {
             Prestamo prestamo = new Prestamo();
             //validaciones de negocio
-            if (plazo > 30)
+            if (plazo > 15)
             {
                 throw new Exception("el plazo max de prestamo son 15 dias");
             }
             prestamo.Id=0;
             prestamo.IdCliente = idCliente;
             prestamo.IdEjemplar = idEjemplar;
-            //prestamo.Ejemplar = _ejemplarServicio.DevolverEjemplar(idEjemplar);
-            //prestamo.Cliente = _clienteServicio.TraerClientePorID(idCliente);
             prestamo.Activo = activo;
             prestamo.Plazo = plazo;
             prestamo.FechaPrestamo = fechaPres;
@@ -47,17 +47,26 @@ namespace BibliotecaNegocio
             TransactionResult result = _prestamoMapper.AltaPrestamo(prestamo);
             return result;
         }
+    
+
         public List<Prestamo> TraerPrestamos()
         {
             _prestamos = _prestamoMapper.GetPrestamos();
-            
-
+            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
+         
             foreach (Prestamo prestamo in _prestamos)
             {
-                prestamo.Ejemplar = _ejemplarServicio.DevolverEjemplar(prestamo.IdEjemplar);
-                prestamo.Cliente = _clienteServicio.TraerClientePorID(prestamo.IdCliente);
+               prestamo.Cliente = _clienteServicio.TraerClientePorID(prestamo.IdCliente);
+                foreach(Ejemplar ejemplar in _ejemplares)
+                {
+                    if (prestamo.IdEjemplar == ejemplar.Id)
+                    {
+                        prestamo.Ejemplar = ejemplar;
+                    }
+                }
+         
             }
-           
+
             return _prestamos;
         }
         public Prestamo DevolverPrestamo(int id)

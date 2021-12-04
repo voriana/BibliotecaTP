@@ -292,6 +292,7 @@ namespace BibliotecaUI
             this._checkActivo.TabIndex = 25;
             this._checkActivo.Text = "Activo";
             this._checkActivo.UseVisualStyleBackColor = true;
+            this._checkActivo.CheckedChanged += new System.EventHandler(this._checkActivo_CheckedChanged);
             // 
             // lbIdEjemplar
             // 

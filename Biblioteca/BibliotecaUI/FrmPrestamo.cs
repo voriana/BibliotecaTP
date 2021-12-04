@@ -110,6 +110,11 @@ namespace BibliotecaUI
                 {
                     throw new Exception("el plazo de dias debe ser numerico");
                 }
+
+                tbfecEntrega.Text = (DateTime.Now.AddDays(double.Parse(tbPlazo.Text))).ToString();
+                tbfecEntrega.Enabled = false;
+                tbFecReal.Enabled = false;
+
             }
             else
             {
@@ -141,7 +146,6 @@ namespace BibliotecaUI
 
         private void InhabilitarCampos()
         {
-            _checkActivo.Checked = true;
             txtIdPrestamo.Enabled = false;
             tbIdCliente.Enabled = false;
             tbIdEjemplar.Enabled = false;
@@ -165,6 +169,7 @@ namespace BibliotecaUI
                 TransactionResult resultadoAlta = _prestamoServicio.EnviarPrestamo(idCliente, idEjemplar, activo, plazo, fechaPres);
                 MessageBox.Show("Prestamo agregado correctamente");
                 CargarLista();
+                Limpiar();
 
             }
             catch(Exception ex)
@@ -173,7 +178,14 @@ namespace BibliotecaUI
             }
         }
 
-       
+        private void _checkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_checkActivo.Checked == true)
+            {
+                tbFecReal.Enabled = false;
+                tbFecReal.Text = "sin devolucion";
+            }
+        }
     }
 }
  
