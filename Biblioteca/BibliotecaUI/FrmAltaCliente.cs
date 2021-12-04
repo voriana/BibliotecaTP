@@ -45,6 +45,8 @@ namespace BibliotecaUI
         {
 
 
+=======
+>>>>>>> 49cf3ec3fadb48741645b5a9ca22cadc279ff9f5
             try
             {
                 ValidacionesAlta();
