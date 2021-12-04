@@ -18,7 +18,7 @@ namespace BibliotecaUI
         private FrmListarLibros _frmListar;
 
         private Alta_Ejemplar _Ejemplar;
-        private FrmListarEjemplar __ListarEjemplar;
+        private FrmListarEjemplar _listarEjemplar;
         private FrmAltaCliente _altaCliente;
         private Clientes _listarClientes;
 
@@ -31,8 +31,8 @@ namespace BibliotecaUI
             libro = new FrmAltaLibro(this);
             _frmListar = new FrmListarLibros(this);
 
-            _Ejemplar = new Alta_Ejemplar();
-            __ListarEjemplar = new FrmListarEjemplar(this);
+            _Ejemplar = new Alta_Ejemplar(this);
+            _listarEjemplar = new FrmListarEjemplar(this);
             _altaCliente = new FrmAltaCliente(this);
             _listarClientes = new Clientes(this);
             _listarPrestamos = new FrmListarPrestamos(this);
@@ -76,7 +76,7 @@ namespace BibliotecaUI
 
         private void btnListarEjemplar_Click(object sender, EventArgs e)
         {
-            __ListarEjemplar.Show();
+            _listarEjemplar.Show();
             this.Hide();
         }
 

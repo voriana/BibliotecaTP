@@ -77,15 +77,22 @@ namespace BibliotecaUI
 
         private void _btnBuscar_Click(object sender, EventArgs e)
         {
-            Validaciones();
-            Prestamo prestamo = ((Prestamo)_cbPrestamo.SelectedItem);
-            CargarDatos(prestamo);
-            
-            //prestamo.IdCliente = ((Prestamo)_cbPrestamo.SelectedItem).IdCliente;
-            //prestamo.IdEjemplar = ((Prestamo)_cbPrestamo.SelectedItem).IdEjemplar;
-            
+            try
+            {
+                Validaciones();
+                Prestamo prestamo = ((Prestamo)_cbPrestamo.SelectedItem);
+                CargarDatos(prestamo);
+                Limpiar();
 
-            
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+
 
         }
 
@@ -110,7 +117,8 @@ namespace BibliotecaUI
         private void CargarLista()
         {
             _lstPrestamos.DataSource = null;
-            _lstPrestamos.DataSource = _servicioPrestamo.TraerPrestamos();
+            _prestamos= _servicioPrestamo.TraerPrestamos();
+            _lstPrestamos.DataSource = _prestamos;
             _lstPrestamos.DisplayMember = "MostrarEnLista";
         }
     }
