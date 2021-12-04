@@ -33,15 +33,10 @@ namespace BibliotecaUI
         private void FrmListarLibros_Load(object sender, EventArgs e)
         {
             CargarLista();
-            CargarComboId();
+        
             
         }
 
-        private void CargarComboId()
-        {
-            CbIdLibro.DataSource = _libros;
-            CbIdLibro.ValueMember = "Id";
-        }
 
         private void CargarLista()
         {
@@ -57,43 +52,41 @@ namespace BibliotecaUI
             try
             {
                 Validaciones();
-                string autor = _txtAutor.Text;
-                string titulo = _txtTitulo.Text;
-                int id = ((Libro)CbIdLibro.SelectedItem).Id;
-              
+                string autor = _txtAutor.Text.ToLower();
+                string titulo = (_txtTitulo.Text).ToLower();
+           
+
+
                 List <Libro> nuevaLista = new List<Libro>();
 
-                if (autor != null&& titulo=="" && CbIdLibro.SelectedIndex==0)
+                if (autor != null && titulo=="" )
                 {
                     foreach (Libro libro in _libros)
                     {
-                        if (libro.Autor == autor)
+                        if (libro.Autor != null)
                         {
-                            nuevaLista.Add(libro);
+                            if (libro.Autor.ToLower().Contains(autor))
+                            {
+                                nuevaLista.Add(libro);
+                            }
                         }
                     }
                 }
-                if (autor == "" && titulo != "" && CbIdLibro.SelectedIndex == 0)
+                if (autor == "" && titulo != "" )
                 {
                     foreach (Libro libro in _libros)
                     {
-                        if (libro.Titulo == titulo)
+                        if (libro.Titulo != null)
                         {
-                            nuevaLista.Add(libro);
+                            if (libro.Titulo.ToLower().Contains(titulo))
+                            {
+                                nuevaLista.Add(libro);
+                            }
                         }
                     }
                 }
-                if (autor == "" && titulo == "" && CbIdLibro.SelectedIndex != 0)
-                {
-                    foreach (Libro libro in _libros)
-                    {
-                        if (libro.Id == id)
-                        {
-                            nuevaLista.Add(libro);
-                        }
-                    }
-                }
-                if(autor != "" && titulo != "" && CbIdLibro.SelectedIndex != 0)
+           
+                if(autor != "" && titulo != "" )
                 {
                     throw new Exception("Solo puede escoger un criterio de busqueda");
                 }
@@ -114,7 +107,7 @@ namespace BibliotecaUI
 
         private void Validaciones()
         {
-            if (_txtAutor.Text == ""&&_txtTitulo.Text=="" && CbIdLibro.SelectedIndex == 0)
+            if (_txtAutor.Text == ""&&_txtTitulo.Text=="")
             {
                 throw new Exception("Debe seleccionar un criterio de busqueda");
             }
@@ -132,7 +125,7 @@ namespace BibliotecaUI
             
             _txtAutor.Clear();
             _txtTitulo.Clear();
-            CbIdLibro.SelectedIndex = 0;
+           
         }
     }
 }

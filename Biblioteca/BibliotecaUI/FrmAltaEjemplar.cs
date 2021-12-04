@@ -38,6 +38,7 @@ namespace BibliotecaUI
         private void Alta_Ejemplar_Load(object sender, EventArgs e)
         {
             CargarLibros();
+            Refrescar();
         }
 
         private void CargarLibros()
@@ -93,10 +94,9 @@ namespace BibliotecaUI
         private Ejemplar CargarEjemplar()
         {
             Ejemplar _nuevoEjemplar = new Ejemplar();
-            Libro libro = new Libro();
-            libro = (Libro)cmbLibros.SelectedItem;
-            _nuevoEjemplar.IdLibro = libro.Id;           
-            _nuevoEjemplar.Libros =_libroServicio.TraerLibroPorId(_nuevoEjemplar.IdLibro);
+            Libro libro = (Libro)cmbLibros.SelectedItem;
+            _nuevoEjemplar.IdLibro = libro.Id;
+            _nuevoEjemplar.Libros = libro;
             _nuevoEjemplar.Observaciones = txbObservaciones.Text;
             _nuevoEjemplar.Precio = double.Parse(txbPrecio.Text);
             return _nuevoEjemplar;
