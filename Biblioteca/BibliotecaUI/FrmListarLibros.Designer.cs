@@ -37,10 +37,8 @@ namespace BibliotecaUI
             this._btnVolver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this._txtTitulo = new System.Windows.Forms.TextBox();
-            this.CbIdLibro = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this._btnLimpiar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // _lstLibros
@@ -113,14 +111,6 @@ namespace BibliotecaUI
             this._txtTitulo.Size = new System.Drawing.Size(157, 25);
             this._txtTitulo.TabIndex = 6;
             // 
-            // CbIdLibro
-            // 
-            this.CbIdLibro.FormattingEnabled = true;
-            this.CbIdLibro.Location = new System.Drawing.Point(501, 230);
-            this.CbIdLibro.Name = "CbIdLibro";
-            this.CbIdLibro.Size = new System.Drawing.Size(121, 25);
-            this.CbIdLibro.TabIndex = 7;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -141,27 +131,14 @@ namespace BibliotecaUI
             this._btnLimpiar.UseVisualStyleBackColor = true;
             this._btnLimpiar.Click += new System.EventHandler(this._btnLimpiar_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(476, 208);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 19);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Busqueda por Id Libro";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // FrmListarLibros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(685, 344);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this._btnLimpiar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.CbIdLibro);
             this.Controls.Add(this._txtTitulo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this._btnVolver);
@@ -191,9 +168,7 @@ namespace BibliotecaUI
         private System.Windows.Forms.Button _btnVolver;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox _txtTitulo;
-        private System.Windows.Forms.ComboBox CbIdLibro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button _btnLimpiar;
-        private System.Windows.Forms.Label label4;
     }
 }

@@ -43,8 +43,6 @@ namespace BibliotecaUI
         }
         private void btnAlta_Click(object sender, EventArgs e)
         {
-             
-
             try
             {
                 ValidacionesAlta();

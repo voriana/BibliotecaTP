@@ -52,7 +52,7 @@ namespace BibliotecaEntidades.Entidades
      
         public override string ToString()
         {
-            return $"Id:{Id}-Autor:{Autor}-Titulo:{Titulo}";
+            return $"Id){Id} -Autor:{Autor} -Titulo:{Titulo}";
         }
         public string MostrarEnlista
         {
