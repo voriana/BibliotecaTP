@@ -119,7 +119,7 @@ namespace BibliotecaUI
             _lstPrestamos.DataSource = null;
             _prestamos= _servicioPrestamo.TraerPrestamos();
             _lstPrestamos.DataSource = _prestamos;
-            _lstPrestamos.DisplayMember = "MostrarEnLista";
+            _lstPrestamos.DisplayMember = "MostrarEnListaPrestamos";
         }
     }
 }

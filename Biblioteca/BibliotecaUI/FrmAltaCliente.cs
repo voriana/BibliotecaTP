@@ -43,6 +43,11 @@ namespace BibliotecaUI
         }
         private void btnAlta_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 49cf3ec3fadb48741645b5a9ca22cadc279ff9f5
             try
             {
                 ValidacionesAlta();
@@ -66,16 +71,16 @@ namespace BibliotecaUI
             {
 
                 MessageBox.Show(ex.Message);
-        
+
             }
-            
+
         }
 
         private void ValidacionesAlta()
         {
-            if (txbApellido.Text == "" || txbDireccion.Text == "" || txbDNI.Text == "" || txbMail.Text == "null" || txbNombre.Text == "" || txbTelefono.Text == ""||txbMail.Text=="")
+            if (txbApellido.Text == "" || txbDireccion.Text == "" || txbDNI.Text == "" || txbMail.Text == "null" || txbNombre.Text == "" || txbTelefono.Text == "" || txbMail.Text == "")
             {
-                throw new Exception("Complete todos los campos"); 
+                throw new Exception("Complete todos los campos");
             }
             if (rbuttonCarolina.Checked == false && rbuttonOriana.Checked == false)
             {
@@ -92,9 +97,9 @@ namespace BibliotecaUI
             {
                 throw new Exception("El campo dni debe ser numerico y positivo");
             }
-           
-           
-        
+
+
+
         }
 
         private Cliente CargarCliente()
@@ -104,14 +109,14 @@ namespace BibliotecaUI
             _cliente.Nombre = txbNombre.Text;
             _cliente.Apellido = txbApellido.Text;
             _cliente.Direccion = txbDireccion.Text;
-            _cliente.Telefono= txbTelefono.Text;
+            _cliente.Telefono = txbTelefono.Text;
             _cliente.Dni = int.Parse(txbDNI.Text);
             _cliente.Id = int.Parse(txbID.Text);
             _cliente.Activo = chbActivo.Checked;
-            _cliente.FechaAlta= dateTimePicker1.Value;         
+            _cliente.FechaAlta = dateTimePicker1.Value;
             if (rbuttonCarolina.Checked)
             {
-               _cliente.Usuario = "36903477";
+                _cliente.Usuario = "36903477";
             }
             if (rbuttonOriana.Checked)
             {
@@ -125,7 +130,7 @@ namespace BibliotecaUI
         private void Refrescar()
         {
             lstbClientes.DataSource = null;
-           List<Cliente> _clientes = _clienteServicio.TraerClientes();
+            List<Cliente> _clientes = _clienteServicio.TraerClientes();
             lstbClientes.DataSource = _clientes;
 
 
@@ -139,9 +144,9 @@ namespace BibliotecaUI
             txbID.Clear();
             txbMail.Clear();
             txbNombre.Clear();
-            rbuttonCarolina.Checked=false;
+            rbuttonCarolina.Checked = false;
             rbuttonOriana.Checked = false;
-            chbActivo.Checked = false; 
+            chbActivo.Checked = false;
             txbTelefono.Clear();
             GenerarIdCliente();
 
@@ -159,5 +164,8 @@ namespace BibliotecaUI
             this.Hide();
             this.Owner.Show();
         }
+
+
     }
+       
 }
