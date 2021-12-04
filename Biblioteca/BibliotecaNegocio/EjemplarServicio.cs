@@ -53,6 +53,7 @@ namespace BibliotecaNegocio
                         {
                             ejemplar.Libros = libro;
                         }
+
                     }
                 }
             }
@@ -73,17 +74,6 @@ namespace BibliotecaNegocio
             return _resultado;
         }
 
-        public int GenerarIDEjemplar()
-        {
-            int _prefijo = 0;
-            int _idEjemplar = 0;
-            Random random = new Random();
-            int ultimos3dígitos = random.Next(100, 999);
-            _idEjemplar = _prefijo + ultimos3dígitos;
-            return _idEjemplar;
-
-
-        }
 
         public List<Ejemplar> TraerEjemplaresPorIdLibro(int IdLibro)
         {

@@ -46,6 +46,9 @@ namespace BibliotecaUI
             List<Libro> _libros = _libroServicio.TraerLibros();
             cmbLibros.DataSource = _libros;
             cmbLibros.DisplayMember = "MostrarComboAltaEjemplar";
+            _ejemplares = _ejemplarServicio.TraerEjemplares();
+            LstbEjemplares.DataSource = _ejemplares;
+            LstbEjemplares.DisplayMember = "MostrarEnCombo";
 
 
         }
@@ -53,11 +56,13 @@ namespace BibliotecaUI
 
         private void VerificacionesAlta()
         {
-            if (cmbLibros.SelectedItem == null)
+
+
+            if (((Libro)cmbLibros.SelectedItem) == null)
             {
                 throw new Exception("Seleccione un Libro");
             }
-            if (txbPrecio.Text == "" || txbObservaciones.Text == "")
+            if (string.IsNullOrEmpty(txbPrecio.Text) || string.IsNullOrEmpty(txbObservaciones.Text))
             {
                 throw new Exception("Complete todos los campos");
             }
@@ -69,12 +74,12 @@ namespace BibliotecaUI
             {
                 throw new Exception("El precio debe ser un campo numerico y positivo");
             }
-          
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+
 
             try
             {
@@ -88,6 +93,11 @@ namespace BibliotecaUI
             {
 
                 MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
             }
         }
 
@@ -115,6 +125,11 @@ namespace BibliotecaUI
         {
             this.Hide();
             this.Owner.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

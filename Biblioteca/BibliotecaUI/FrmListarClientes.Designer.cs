@@ -29,6 +29,7 @@ namespace BibliotecaUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbIDClientes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,7 +57,9 @@ namespace BibliotecaUI
             this.ChbNoActivo = new System.Windows.Forms.CheckBox();
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,16 +75,17 @@ namespace BibliotecaUI
             // 
             // cmbIDClientes
             // 
+            this.cmbIDClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIDClientes.FormattingEnabled = true;
-            this.cmbIDClientes.Location = new System.Drawing.Point(45, 134);
+            this.cmbIDClientes.Location = new System.Drawing.Point(45, 271);
             this.cmbIDClientes.Name = "cmbIDClientes";
-            this.cmbIDClientes.Size = new System.Drawing.Size(121, 28);
+            this.cmbIDClientes.Size = new System.Drawing.Size(284, 28);
             this.cmbIDClientes.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 98);
+            this.label2.Location = new System.Drawing.Point(41, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 2;
@@ -89,12 +93,12 @@ namespace BibliotecaUI
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBuscar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscar.Location = new System.Drawing.Point(45, 214);
+            this.btnBuscar.Location = new System.Drawing.Point(117, 347);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(108, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(134, 49);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -102,7 +106,7 @@ namespace BibliotecaUI
             // 
             // txbID
             // 
-            this.txbID.Location = new System.Drawing.Point(610, 55);
+            this.txbID.Location = new System.Drawing.Point(820, 88);
             this.txbID.Name = "txbID";
             this.txbID.ReadOnly = true;
             this.txbID.Size = new System.Drawing.Size(135, 26);
@@ -111,7 +115,7 @@ namespace BibliotecaUI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(513, 55);
+            this.label9.Location = new System.Drawing.Point(723, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(26, 20);
             this.label9.TabIndex = 31;
@@ -119,7 +123,7 @@ namespace BibliotecaUI
             // 
             // txbMail
             // 
-            this.txbMail.Location = new System.Drawing.Point(345, 325);
+            this.txbMail.Location = new System.Drawing.Point(555, 358);
             this.txbMail.Name = "txbMail";
             this.txbMail.ReadOnly = true;
             this.txbMail.Size = new System.Drawing.Size(128, 26);
@@ -128,7 +132,7 @@ namespace BibliotecaUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(249, 325);
+            this.label7.Location = new System.Drawing.Point(459, 358);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 20);
             this.label7.TabIndex = 29;
@@ -136,7 +140,7 @@ namespace BibliotecaUI
             // 
             // txbTelefono
             // 
-            this.txbTelefono.Location = new System.Drawing.Point(345, 275);
+            this.txbTelefono.Location = new System.Drawing.Point(555, 308);
             this.txbTelefono.Name = "txbTelefono";
             this.txbTelefono.ReadOnly = true;
             this.txbTelefono.Size = new System.Drawing.Size(128, 26);
@@ -145,7 +149,7 @@ namespace BibliotecaUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(249, 275);
+            this.label6.Location = new System.Drawing.Point(459, 308);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 27;
@@ -153,7 +157,7 @@ namespace BibliotecaUI
             // 
             // txbDireccion
             // 
-            this.txbDireccion.Location = new System.Drawing.Point(345, 225);
+            this.txbDireccion.Location = new System.Drawing.Point(555, 258);
             this.txbDireccion.Name = "txbDireccion";
             this.txbDireccion.ReadOnly = true;
             this.txbDireccion.Size = new System.Drawing.Size(128, 26);
@@ -162,7 +166,7 @@ namespace BibliotecaUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(249, 225);
+            this.label5.Location = new System.Drawing.Point(459, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 25;
@@ -170,7 +174,7 @@ namespace BibliotecaUI
             // 
             // txbApellido
             // 
-            this.txbApellido.Location = new System.Drawing.Point(345, 173);
+            this.txbApellido.Location = new System.Drawing.Point(555, 206);
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.ReadOnly = true;
             this.txbApellido.Size = new System.Drawing.Size(128, 26);
@@ -179,7 +183,7 @@ namespace BibliotecaUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(249, 173);
+            this.label4.Location = new System.Drawing.Point(459, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 23;
@@ -187,7 +191,7 @@ namespace BibliotecaUI
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(345, 115);
+            this.txbNombre.Location = new System.Drawing.Point(555, 148);
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.ReadOnly = true;
             this.txbNombre.Size = new System.Drawing.Size(128, 26);
@@ -196,7 +200,7 @@ namespace BibliotecaUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(249, 115);
+            this.label3.Location = new System.Drawing.Point(459, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 21;
@@ -204,7 +208,7 @@ namespace BibliotecaUI
             // 
             // txbDNI
             // 
-            this.txbDNI.Location = new System.Drawing.Point(345, 55);
+            this.txbDNI.Location = new System.Drawing.Point(555, 88);
             this.txbDNI.Name = "txbDNI";
             this.txbDNI.ReadOnly = true;
             this.txbDNI.Size = new System.Drawing.Size(128, 26);
@@ -213,7 +217,7 @@ namespace BibliotecaUI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(249, 61);
+            this.label8.Location = new System.Drawing.Point(459, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 20);
             this.label8.TabIndex = 19;
@@ -221,7 +225,7 @@ namespace BibliotecaUI
             // 
             // txbUsuario
             // 
-            this.txbUsuario.Location = new System.Drawing.Point(610, 165);
+            this.txbUsuario.Location = new System.Drawing.Point(820, 198);
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.ReadOnly = true;
             this.txbUsuario.Size = new System.Drawing.Size(135, 26);
@@ -230,7 +234,7 @@ namespace BibliotecaUI
             // Usuario
             // 
             this.Usuario.AutoSize = true;
-            this.Usuario.Location = new System.Drawing.Point(513, 165);
+            this.Usuario.Location = new System.Drawing.Point(723, 198);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(64, 20);
             this.Usuario.TabIndex = 35;
@@ -238,7 +242,7 @@ namespace BibliotecaUI
             // 
             // txbFechaAlta
             // 
-            this.txbFechaAlta.Location = new System.Drawing.Point(610, 115);
+            this.txbFechaAlta.Location = new System.Drawing.Point(820, 148);
             this.txbFechaAlta.Name = "txbFechaAlta";
             this.txbFechaAlta.ReadOnly = true;
             this.txbFechaAlta.Size = new System.Drawing.Size(135, 26);
@@ -247,8 +251,8 @@ namespace BibliotecaUI
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label11.Location = new System.Drawing.Point(513, 115);
+            this.label11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.Location = new System.Drawing.Point(723, 148);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 20);
             this.label11.TabIndex = 33;
@@ -256,12 +260,12 @@ namespace BibliotecaUI
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLimpiar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLimpiar.Location = new System.Drawing.Point(580, 389);
+            this.btnLimpiar.Location = new System.Drawing.Point(808, 431);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(108, 35);
+            this.btnLimpiar.Size = new System.Drawing.Size(147, 50);
             this.btnLimpiar.TabIndex = 39;
             this.btnLimpiar.Text = "LIMPIAR";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -271,7 +275,7 @@ namespace BibliotecaUI
             // 
             this.groupBox1.Controls.Add(this.ChbNoActivo);
             this.groupBox1.Controls.Add(this.chbActivo);
-            this.groupBox1.Location = new System.Drawing.Point(536, 225);
+            this.groupBox1.Location = new System.Drawing.Point(769, 271);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 120);
             this.groupBox1.TabIndex = 40;
@@ -300,23 +304,34 @@ namespace BibliotecaUI
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnVolver.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnVolver.Location = new System.Drawing.Point(345, 389);
+            this.btnVolver.Location = new System.Drawing.Point(541, 431);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(108, 35);
+            this.btnVolver.Size = new System.Drawing.Size(142, 50);
             this.btnVolver.TabIndex = 41;
             this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(58, 74);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(229, 131);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1091, 527);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLimpiar);
@@ -347,6 +362,7 @@ namespace BibliotecaUI
             this.Load += new System.EventHandler(this.FrmListarClientes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +397,6 @@ namespace BibliotecaUI
         private System.Windows.Forms.CheckBox ChbNoActivo;
         private System.Windows.Forms.CheckBox chbActivo;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

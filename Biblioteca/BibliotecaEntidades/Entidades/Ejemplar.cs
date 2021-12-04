@@ -56,8 +56,10 @@ namespace BibliotecaEntidades.Entidades
         {
             get =>
                  $"IDEJEMPLAR: {Id.ToString()}PRECIO: ARGS{Precio.ToString("0.00")}-LIBRO: {this.Libros.Autor}";
-            
+
         }
+
+      
 
        
    
