@@ -71,6 +71,22 @@ namespace BibliotecaEntidades.Entidades
                 return $"{this.Id}-{this.Cliente.Apellido} {this.Cliente.Nombre}-{this.Ejemplar.MostrarEnCombo}-ARGS: {this.Ejemplar.Precio}";
             }
         }
+
+        public string MostrarEnListaPrestamos
+        {
+            get
+            {
+                if (this.Ejemplar == null)
+                {
+
+                    this.Ejemplar = new Ejemplar();
+                    {
+                        this.Ejemplar.Libros = new Libro();
+                    }
+                }
+                return $"{this.Id}){this.Cliente.Nombre}{this.Cliente.Apellido}-{this.Ejemplar.Libros.Titulo}({this.Ejemplar.Precio}-ARGS)Cantidad:{this.Plazo}-{this.Activo}";
+            }
+        }
     }
     
 }
