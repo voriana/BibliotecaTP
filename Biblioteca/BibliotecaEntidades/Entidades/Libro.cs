@@ -63,7 +63,7 @@ namespace BibliotecaEntidades.Entidades
         {
             get
             {
-                return $"IDLibro:{this._id}-Titulo:{this._titulo}-Autor:{this._autor}"; 
+                return $"{this._id})-Titulo:{this._titulo}-Autor:{this._autor}"; 
             }
         }
         
