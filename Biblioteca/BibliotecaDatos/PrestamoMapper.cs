@@ -37,14 +37,14 @@ namespace BibliotecaDatos
         private NameValueCollection ReverseMap(Prestamo prestamo)
         {
             NameValueCollection n = new NameValueCollection();
-            n.Add("id", prestamo.Id.ToString());
+            n.Add("id", 0.ToString());
             n.Add("idCliente", prestamo.IdCliente.ToString());
             n.Add("idEjemplar", prestamo.IdEjemplar.ToString());
             n.Add("Plazo", prestamo.Plazo.ToString());
             n.Add("Abierto", prestamo.Activo.ToString());
-            n.Add("FechaPrestamo", prestamo.FechaPrestamo.ToString("dd-MM-yyyy"));
-            n.Add("FechaDevolucionTentativa", prestamo.FechaDevolucionTentativa.ToString("dd-MM-yyyy"));
-            n.Add("FechaDevolucionReal", prestamo.FechaDevolucionReal.ToString("dd-MM-yyyy"));
+            n.Add("FechaPrestamo", prestamo.FechaPrestamo.ToString("yyyy-MM-dd"));
+            n.Add("FechaDevolucionTentativa", prestamo.FechaDevolucionTentativa.ToString("yyyy-MM-dd"));
+            n.Add("FechaDevolucionReal", prestamo.FechaDevolucionReal.ToString("yyyy-MM-dd"));
             return n;
 
         }

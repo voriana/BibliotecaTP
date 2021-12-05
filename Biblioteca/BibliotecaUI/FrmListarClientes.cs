@@ -49,9 +49,6 @@ namespace BibliotecaUI
 
                 MessageBox.Show("Error En la carga");
             }
-            
-
-
         }
 
 
@@ -85,8 +82,6 @@ namespace BibliotecaUI
             _cliente = _clienteServicio.TraerClientePorID(_id);
           
             return _cliente;
-
-            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -112,8 +107,6 @@ namespace BibliotecaUI
             chbActivo.Checked = false;
             ChbNoActivo.Checked = false;
             txbTelefono.Clear();
-
-
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

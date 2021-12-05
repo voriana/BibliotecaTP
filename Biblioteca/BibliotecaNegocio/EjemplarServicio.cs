@@ -17,16 +17,14 @@ namespace BibliotecaNegocio
         private List<Libro> _libros;
         private EjemplarMapper _Ejemplarmapper;
         private LibroMapper _libroMapper;
-        //private List<Ejemplar> _ejemplaresPorID;
-
-
+       
         public EjemplarServicio()
         {
             _ejemplares = new List<Ejemplar>();
             _libros = new List<Libro>();
             _Ejemplarmapper = new EjemplarMapper();
             _libroMapper = new LibroMapper();
-            //_ejemplaresPorID = new List<Ejemplar>();
+            
         }
       
  

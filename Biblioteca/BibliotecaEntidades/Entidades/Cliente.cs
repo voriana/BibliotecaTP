@@ -41,13 +41,10 @@ namespace BibliotecaEntidades.Entidades
         [DataMember(Name = "Usuario")]
         public string Usuario { get => _usuario; set => _usuario = value; }
 
-    
-
         public string MostrarCombo
         {
-            get { return $"{this.Nombre} - {this.Apellido}"; }
+            get { return $"{this.Nombre}  {this.Apellido}"; }
         }
 
-      
     }
 }
