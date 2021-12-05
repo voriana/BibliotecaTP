@@ -88,7 +88,7 @@ namespace BibliotecaUI
             this.txbDNI.Name = "txbDNI";
             this.txbDNI.Size = new System.Drawing.Size(192, 26);
             this.txbDNI.TabIndex = 2;
-            this.txbDNI.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // txbNombre
             // 

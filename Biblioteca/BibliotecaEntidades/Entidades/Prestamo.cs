@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BibliotecaEntidades.Entidades
 {
+    [DataContract]
     public class Prestamo
     {
         private int _id;
@@ -35,42 +37,48 @@ namespace BibliotecaEntidades.Entidades
            
         }
 
+        [DataMember(Name = "id")]
         public int Id { get => _id; set => _id = value; }
         public Cliente Cliente { get => _cliente; set => _cliente = value; }
         public Ejemplar Ejemplar { get => _ejemplar; set => _ejemplar = value; }
+
+        [DataMember(Name = "Plazo")]
         public int Plazo { get => _plazo; set => _plazo = value; }
+        [DataMember(Name = "fechaPrestamo")]
         public DateTime FechaPrestamo { get => _fechaPrestamo; set => _fechaPrestamo = value; }
-
+        [DataMember(Name = "fechaDevolucionTentativa")]
+        public DateTime FechaDevolucionTentativa { get => _fechaDevolucionTentativa; set => _fechaDevolucionTentativa = value; }
+        
+        [DataMember(Name = "fechaDevolucionReal")]
         public DateTime FechaDevolucionReal { get => _fechaDevolucionReal; set => _fechaDevolucionReal = value; }
+        
+        [DataMember(Name = "Abierto")]
         public bool Activo { get => _activo; set => _activo = value; }
+
+        [DataMember(Name = "idCliente")]
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
+        [DataMember(Name = "idEjemplar")]
         public int IdEjemplar { get => _idEjemplar; set => _idEjemplar = value; }
-        //autocalculada
-        public DateTime FechaDevolucionTentativa
+
+        public string ActivoString
         {
             get
             {
-                return _fechaDevolucionTentativa = (FechaPrestamo.AddDays(Plazo));
-            }
-        }
-
-
-
-        public string MostrarEnLista
-        {
-            get
-            {
-                if (this.Ejemplar == null)
+                string estado = "";
+                if (Activo.Equals(false))
                 {
-                  
-                    this.Ejemplar = new Ejemplar();
-                    {
-                        this.Ejemplar.Libros = new Libro();
-                    }
+                    estado = "Cerrado";
                 }
-                return $"{this.Id}-{this.Cliente.Apellido} {this.Cliente.Nombre}-{this.Ejemplar.MostrarEnCombo}-ARGS: {this.Ejemplar.Precio}";
+                else
+                {
+                    estado = "Abierto";
+                }
+
+                return estado;
             }
         }
+
+
 
         public string MostrarEnListaPrestamos
         {
@@ -84,9 +92,28 @@ namespace BibliotecaEntidades.Entidades
                         this.Ejemplar.Libros = new Libro();
                     }
                 }
-                return $"{this.Id}){this.Cliente.Nombre}{this.Cliente.Apellido}-{this.Ejemplar.Libros.Titulo}({this.Ejemplar.Precio}-ARGS)Cantidad:{this.Plazo}-{this.Activo}";
+                return $"{this.Id}){this.Cliente.Nombre} {this.Cliente.Apellido}- {this.Ejemplar.Libros.Titulo} (${this.Ejemplar.Precio}-ARGS) Cantidad:{this.Plazo}dias -{this.ActivoString}";
             }
         }
+
+        public string MostrarComboListarPrestamos
+        {
+            get
+            {
+                if (this.Ejemplar == null)
+                {
+
+                    this.Ejemplar = new Ejemplar();
+                    {
+                        this.Ejemplar.Libros = new Libro();
+                    }
+                }
+                return $"{this.Cliente.Nombre} {this.Cliente.Apellido}";
+            }
+        }
+
+       
+        
     }
     
 }

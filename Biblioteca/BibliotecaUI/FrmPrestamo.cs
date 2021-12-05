@@ -15,8 +15,7 @@ namespace BibliotecaUI
 {
     public partial class FrmPrestamo : Form
     {
-        
-        private ClienteServicio _servicioCli;
+        private ClienteServicio _clienteServicio;
         private EjemplarServicio _ejemplarServicio;
         private PrestamoServicio _prestamoServicio;
         private List<Cliente> _clientes;
@@ -28,36 +27,130 @@ namespace BibliotecaUI
         {
             InitializeComponent();
             this.Owner = form;
-            _servicioCli = new ClienteServicio();
+            _clienteServicio = new ClienteServicio();
             _ejemplarServicio = new EjemplarServicio();
             _prestamoServicio= new PrestamoServicio();
             _clientes = new List<Cliente>();
             _ejemplares = new List<Ejemplar>();
             _prestamos = new List<Prestamo>();
-
-
         }
-
-
+        private void FrmPrestamo_Load(object sender, EventArgs e)
+        {
+            Limpiar();
+            CargaComboCliente();
+            CargarComboEjemplar();
+            CargarLista();
+            Calculos();
+            InhabilitarCampos();
+        }
+        #region"BOTONES"
+        //boton volver
         private void btnVolver_Click(object sender, EventArgs e)
         {
+            Limpiar();
             this.Hide();
             this.Owner.Show();
         }
 
-        private void FrmPrestamo_Load(object sender, EventArgs e)
+        //Boton guardar
+        private void _btnGuardar_Click(object sender, EventArgs e)
         {
-            CargaComboCliente();
-            CargarComboEjemplar();
-            CargarLista();
-            InhabilitarCampos();
+            try
+            {
+                Validaciones();
+                int idCliente = ((Cliente)cbClientes.SelectedItem).Id;
+                int idEjemplar = ((Ejemplar)cbEjemplar.SelectedItem).Id;
+                bool activo = _checkActivo.Checked;
+                int plazo = int.Parse(tbPlazo.Text);
+                DateTime fechaPres = DateTime.Parse(tbfechPrestamo.Text);
+                DateTime fechaTentativa = DateTime.Parse(tbfecEntrega.Text);
+                DateTime fechareal = DateTime.Parse(tbfecEntrega.Text);
 
+                TransactionResult resultadoAlta = _prestamoServicio.EnviarPrestamo((int)idCliente, (int)idEjemplar, activo, plazo, fechaPres, fechaTentativa, fechareal);
+                if (!resultadoAlta.IsOk)
+                {
+                    throw new Exception(resultadoAlta.Error);
 
+                }
+                MessageBox.Show("Prestamo agregado correctamente");
+                CargarLista();
+                Limpiar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        //Boton limpiar
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion"BOTONES"
+
+
+        #region"EVENTOS"
+
+        private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente cliente = (Cliente)cbClientes.SelectedItem;
+
+            if (cliente.Id != 0)
+            {
+
+                tbIdCliente.Text = cliente.Id.ToString();
+
+            }
+        }
+
+        private void cbEjemplar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Ejemplar ejemplar = (Ejemplar)cbEjemplar.SelectedItem;
+            if (ejemplar.Id != 0)
+            {
+
+                tbIdEjemplar.Text = ((Ejemplar)cbEjemplar.SelectedItem).Id.ToString();
+
+            }
+        }
+
+        private void _checkActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_checkActivo.Checked)
+            {
+                tbFecReal.Enabled = false;
+                tbFecReal.Text = "sin devolucion";
+            }
+
+        }
+        private void tbPlazo_TextChanged(object sender, EventArgs e)
+        {
+            DateTime fecDevol = DateTime.Parse(tbfechPrestamo.Text);
+            var dias = 0;
+            if (int.TryParse(tbPlazo.Text, out dias))
+                if (tbPlazo.Text != "")
+                {
+                    tbfecEntrega.Text = fecDevol.AddDays(dias).ToString("yyyy-MM-dd");
+                    tbFecReal.Text = fecDevol.AddDays(dias).ToString("yyyy-MM-dd");
+                }
+        }
+        #endregion"EVENTOS"
+
+
+        #region"METODOS"
         private void CargaComboCliente()
         {
-            _clientes=_servicioCli.TraerClientes();
+            //_clientes = new List<Cliente>();
+            _clientes = _clienteServicio.TraerClientes();
             cbClientes.DataSource = null;
             cbClientes.DataSource = _clientes;
             cbClientes.DisplayMember = "MostrarCombo";
@@ -68,19 +161,13 @@ namespace BibliotecaUI
             cbEjemplar.DataSource = null;
             cbEjemplar.DataSource = _ejemplares;
             cbEjemplar.DisplayMember = "MostrarEnCombo";
-            cbEjemplar.ValueMember = "Id";
         }
         private void CargarLista()
         {
-            _prestamos = _prestamoServicio.TraerPrestamos();
+            _prestamos = _prestamoServicio.TraerPrestamosConEjemplares();
             lstPrestamos.DataSource = null;
             lstPrestamos.DataSource = _prestamos;
-            lstPrestamos.DisplayMember = "MostrarEnLista";
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            Limpiar();
+            lstPrestamos.DisplayMember = "MostrarEnListaPrestamos";
         }
 
         private void Limpiar()
@@ -92,100 +179,50 @@ namespace BibliotecaUI
                     control.Text = string.Empty;
                 }
             }
+            _checkActivo.Checked = false;
         }
-
-       private void Validaciones()
-       {
-            if (cbClientes.SelectedIndex == -1)
-            {
-                throw new Exception("Debe seleccionar un cliente");
-            }
-            if (cbEjemplar.SelectedIndex == -1)
-            {
-                throw new Exception("Debe seleccionar un ejemplar");
-            }
-            if (tbPlazo.Text != "")
-            {
-                if(!int.TryParse(tbPlazo.Text,out int salida))
-                {
-                    throw new Exception("el plazo de dias debe ser numerico");
-                }
-
-                tbfecEntrega.Text = (DateTime.Now.AddDays(double.Parse(tbPlazo.Text))).ToString();
-                tbfecEntrega.Enabled = false;
-                tbFecReal.Enabled = false;
-
-            }
-            else
-            {
-                throw new Exception("El plazo es obligatorio");
-            }
-            
-          
-       }
-
-        private void cbClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (((Cliente)cbClientes.SelectedItem).Id != -1)
-            {
-               
-                tbIdCliente.Text = ((Cliente)cbClientes.SelectedItem).Id.ToString();
-
-            }
-        }
-
-        private void cbEjemplar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (((Ejemplar)cbEjemplar.SelectedItem).Id != -1)
-            {
-                
-                tbIdEjemplar.Text = ((Ejemplar)cbEjemplar.SelectedItem).Id.ToString();
-
-            }
-        }
-
         private void InhabilitarCampos()
         {
             txtIdPrestamo.Enabled = false;
             tbIdCliente.Enabled = false;
             tbIdEjemplar.Enabled = false;
             tbfechPrestamo.Enabled = false;
-            tbfechPrestamo.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            tbfechPrestamo.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            tbfecEntrega.Enabled = false;
+            tbFecReal.Enabled = false;
         }
-
-      
-
-        private void _btnGuardar_Click(object sender, EventArgs e)
+        private void Validaciones()
         {
-            try
+            Cliente cliente = (Cliente)cbClientes.SelectedItem;
+            Ejemplar ejemplar = (Ejemplar)cbEjemplar.SelectedItem;
+            if ((cliente == null))
             {
-                Validaciones();
-                int idCliente = ((Cliente)cbClientes.SelectedItem).Id;
-                int idEjemplar = ((Ejemplar)cbEjemplar.SelectedItem).Id;
-                bool activo = _checkActivo.Checked;
-                int plazo = Convert.ToInt32(tbPlazo.Text);
-                DateTime fechaPres = Convert.ToDateTime(tbfechPrestamo.Text);
-
-                TransactionResult resultadoAlta = _prestamoServicio.EnviarPrestamo(idCliente, idEjemplar, activo, plazo, fechaPres);
-                MessageBox.Show("Prestamo agregado correctamente");
-                CargarLista();
-                Limpiar();
-
+                throw new Exception("Debe seleccionar un cliente");
             }
-            catch(Exception ex)
+            if (ejemplar == null)
             {
-                MessageBox.Show(ex.Message);
+                throw new Exception("Debe seleccionar un ejemplar");
+            }
+            if (tbPlazo.Text != "")
+            {
+                if (!int.TryParse(tbPlazo.Text, out int salida))
+                {
+                    throw new Exception("el plazo de dias debe ser numerico");
+                }
+            }
+            else
+            {
+                throw new Exception("El plazo es obligatorio");
             }
         }
-
-        private void _checkActivo_CheckedChanged(object sender, EventArgs e)
+        //Cantidad de prestamos existentes
+        private void Calculos()
         {
-            if (_checkActivo.Checked == true)
-            {
-                tbFecReal.Enabled = false;
-                tbFecReal.Text = "sin devolucion";
-            }
+            OperacionModel operacion = new OperacionModel(_prestamoServicio.TraerPrestamosConEjemplares());
+            groupBox2.Text += $" {operacion.CantidadPrestamos.ToString()}";
         }
+        #endregion"METODOS"
+
+     
     }
 }
- 

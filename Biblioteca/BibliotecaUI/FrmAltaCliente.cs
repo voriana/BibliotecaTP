@@ -17,21 +17,17 @@ namespace BibliotecaUI
     public partial class FrmAltaCliente : Form
     {
         private ClienteServicio _clienteServicio;
+        private List<Cliente> _clientes;
         public FrmAltaCliente(Form principal)
         {
             InitializeComponent();
             _clienteServicio = new ClienteServicio();
+            _clientes = new List<Cliente>();
             this.Owner = principal;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void FrmAltaCliente_Load(object sender, EventArgs e)
         {
-
             GenerarIdCliente();
             Refrescar();
         }
@@ -43,11 +39,6 @@ namespace BibliotecaUI
         }
         private void btnAlta_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 49cf3ec3fadb48741645b5a9ca22cadc279ff9f5
             try
             {
                 ValidacionesAlta();
@@ -98,8 +89,6 @@ namespace BibliotecaUI
                 throw new Exception("El campo dni debe ser numerico y positivo");
             }
 
-
-
         }
 
         private Cliente CargarCliente()
@@ -130,7 +119,7 @@ namespace BibliotecaUI
         private void Refrescar()
         {
             lstbClientes.DataSource = null;
-            List<Cliente> _clientes = _clienteServicio.TraerClientes();
+            _clientes = _clienteServicio.TraerClientes();
             lstbClientes.DataSource = _clientes;
 
 
@@ -149,23 +138,30 @@ namespace BibliotecaUI
             chbActivo.Checked = false;
             txbTelefono.Clear();
             GenerarIdCliente();
-
-
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            Limpiar();
+            try
+            {
+                Limpiar();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
-            this.Owner.Show();
+            try
+            {
+                this.Hide();
+                this.Owner.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
-
     }
        
 }

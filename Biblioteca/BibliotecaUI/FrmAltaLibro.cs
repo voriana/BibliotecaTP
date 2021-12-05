@@ -17,34 +17,95 @@ namespace BibliotecaUI
     {
         private LibroServicio _libroServicio;
         
-        private List<Libro> _libros;
+     
         public FrmAltaLibro(Form principal )
         {
             InitializeComponent();
             this.Owner = principal;
             _libroServicio = new LibroServicio();
         }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void FrmAltaLibro_Load(object sender, EventArgs e)
         {
-            Limpiar();
+            RecargarLista();
+            txtId.Enabled = false;
+
         }
 
-        private void Limpiar()
+        #region"Botones"
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            foreach(Control control in Controls)
+            try
             {
-                if (control is TextBox)
+                ValidarCampos();
+                string autor = txtAutor.Text;
+                string titulo = txtTitulo.Text;
+                string tema = txtTema.Text;
+                string editorial = txtEditorial.Text;
+                int edicion = int.Parse(txtEdicion.Text);
+                int pags = int.Parse(txtPags.Text);
+
+                TransactionResult resutaldo = _libroServicio.AgregarLibro(autor, titulo, tema, editorial, edicion, pags);
+                if (!resutaldo.IsOk)
                 {
-                    control.Text = string.Empty;
+                    throw new Exception($"Erorr{resutaldo.Error}");
                 }
+                else
+                {
+                    MessageBox.Show($"libro agregado a la lista");
+                    RecargarLista();
+                    Limpiar();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Owner.Show();
+            try{
+                this.Hide();
+                this.Owner.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Limpiar();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RecargarLista();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+        #endregion
+
+        #region"Metodos"
+        private void Limpiar()
+        {
+            txtId.Clear();
+            txtAutor.Clear();
+            txtEdicion.Clear();
+            txtEditorial.Clear();
+            txtPags.Clear();
+            txtTema.Clear();
+            txtTitulo.Clear();
         }
 
         //validar campos ingresados.
@@ -70,40 +131,11 @@ namespace BibliotecaUI
 
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try 
-            {
-                ValidarCampos();
-                //int id =int.Parse( txtId.Text);
-                string autor= txtAutor.Text;
-                string titulo = txtTitulo.Text;
-                string tema = txtTema.Text;
-                string editorial = txtEditorial.Text;
-                int edicion = int.Parse(txtEdicion.Text);
-                int pags = int.Parse(txtPags.Text);
-
-                TransactionResult resutaldo =_libroServicio.AgregarLibro( autor, titulo, tema, editorial, edicion, pags);
-                if (!resutaldo.IsOk)
-                {
-                    throw new Exception($"Erorr{resutaldo.Error}");
-                }
-                else
-                {
-                    MessageBox.Show($"libro agregado a la lista");
-                    RecargarLista();
-
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void RecargarLista()
         {
-            _libros = _libroServicio.TraerLibros();
+            List<Libro> _libros = _libroServicio.TraerLibros();
             lstLibros.DataSource = null;
             lstLibros.DataSource = _libros;
             lstLibros.DisplayMember = "MostrarEnlista";
@@ -111,31 +143,12 @@ namespace BibliotecaUI
         }
 
        
-
-        private void FrmAltaLibro_Load(object sender, EventArgs e)
-        {
-            RecargarLista();
-            CargarIdNuevoLibro();
-        }
-
-        private void CargarIdNuevoLibro()
-        {
-           txtId.Text =_libroServicio.GenerarIdLibro().ToString();
-           txtId.Enabled = false;
-        }
-
-      
-
-        private void btnRefrescar_Click(object sender, EventArgs e)
-        {
-            RecargarLista();
-            //Calculos();
-        }
         private void Calculos()
         {
-            OperacionModel operacion = new OperacionModel(_libros);
+            OperacionModel operacion = new OperacionModel(_libroServicio.TraerLibros());
             txtCant.Text= operacion.CantidadLibros.ToString();
             txtCant.Enabled = false;
         }
     }
+    #endregion="region2"
 }

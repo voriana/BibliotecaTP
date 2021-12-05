@@ -30,9 +30,6 @@ namespace BibliotecaUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            this.gbClientes = new System.Windows.Forms.GroupBox();
-            this.btnListarCliente = new System.Windows.Forms.Button();
-            this.btnAltaCliente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnListarPres = new System.Windows.Forms.Button();
             this.btnAltaPrestamo = new System.Windows.Forms.Button();
@@ -42,57 +39,24 @@ namespace BibliotecaUI
             this.gbAltaLibro = new System.Windows.Forms.GroupBox();
             this.btnListarLibros = new System.Windows.Forms.Button();
             this.btnAltaLibro = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gbClientes.SuspendLayout();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAltaCliente = new System.Windows.Forms.Button();
+            this.btnListarCliente = new System.Windows.Forms.Button();
+            this.gbClientes = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.gbEjemplares.SuspendLayout();
             this.gbAltaLibro.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.gbClientes.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gbClientes
-            // 
-            this.gbClientes.Controls.Add(this.btnListarCliente);
-            this.gbClientes.Controls.Add(this.btnAltaCliente);
-            this.gbClientes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbClientes.Location = new System.Drawing.Point(25, 89);
-            this.gbClientes.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.gbClientes.Name = "gbClientes";
-            this.gbClientes.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.gbClientes.Size = new System.Drawing.Size(177, 133);
-            this.gbClientes.TabIndex = 0;
-            this.gbClientes.TabStop = false;
-            this.gbClientes.Text = "Módulo Clientes";
-            // 
-            // btnListarCliente
-            // 
-            this.btnListarCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListarCliente.Location = new System.Drawing.Point(32, 83);
-            this.btnListarCliente.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnListarCliente.Name = "btnListarCliente";
-            this.btnListarCliente.Size = new System.Drawing.Size(110, 23);
-            this.btnListarCliente.TabIndex = 3;
-            this.btnListarCliente.Text = "Listar Clientes";
-            this.btnListarCliente.UseVisualStyleBackColor = true;
-            this.btnListarCliente.Click += new System.EventHandler(this.btnListarCliente_Click);
-            // 
-            // btnAltaCliente
-            // 
-            this.btnAltaCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaCliente.Location = new System.Drawing.Point(32, 40);
-            this.btnAltaCliente.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnAltaCliente.Name = "btnAltaCliente";
-            this.btnAltaCliente.Size = new System.Drawing.Size(110, 23);
-            this.btnAltaCliente.TabIndex = 0;
-            this.btnAltaCliente.Text = "Alta Cliente";
-            this.btnAltaCliente.UseVisualStyleBackColor = true;
-            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnListarPres);
             this.groupBox1.Controls.Add(this.btnAltaPrestamo);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(26, 230);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox1.Location = new System.Drawing.Point(26, 199);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -109,7 +73,7 @@ namespace BibliotecaUI
             this.btnListarPres.Name = "btnListarPres";
             this.btnListarPres.Size = new System.Drawing.Size(110, 23);
             this.btnListarPres.TabIndex = 2;
-            this.btnListarPres.Text = "Listar Prestamos";
+            this.btnListarPres.Text = "Listar Préstamos";
             this.btnListarPres.UseVisualStyleBackColor = true;
             this.btnListarPres.Click += new System.EventHandler(this.btnListarPres_Click);
             // 
@@ -129,8 +93,9 @@ namespace BibliotecaUI
             // 
             this.gbEjemplares.Controls.Add(this.btnListarEjemplar);
             this.gbEjemplares.Controls.Add(this.btnAltaEjemplar);
-            this.gbEjemplares.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbEjemplares.Location = new System.Drawing.Point(235, 89);
+            this.gbEjemplares.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEjemplares.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbEjemplares.Location = new System.Drawing.Point(236, 44);
             this.gbEjemplares.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.gbEjemplares.Name = "gbEjemplares";
             this.gbEjemplares.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -170,12 +135,13 @@ namespace BibliotecaUI
             this.gbAltaLibro.Controls.Add(this.btnListarLibros);
             this.gbAltaLibro.Controls.Add(this.btnAltaLibro);
             this.gbAltaLibro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.gbAltaLibro.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAltaLibro.Location = new System.Drawing.Point(235, 230);
+            this.gbAltaLibro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAltaLibro.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbAltaLibro.Location = new System.Drawing.Point(235, 199);
             this.gbAltaLibro.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.gbAltaLibro.Name = "gbAltaLibro";
             this.gbAltaLibro.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.gbAltaLibro.Size = new System.Drawing.Size(177, 141);
+            this.gbAltaLibro.Size = new System.Drawing.Size(177, 133);
             this.gbAltaLibro.TabIndex = 1;
             this.gbAltaLibro.TabStop = false;
             this.gbAltaLibro.Text = "Módulo Libro";
@@ -207,17 +173,59 @@ namespace BibliotecaUI
             this.btnAltaLibro.UseVisualStyleBackColor = true;
             this.btnAltaLibro.Click += new System.EventHandler(this.btnAltaLibro_Click);
             // 
-            // label1
+            // groupBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "OPCIONES DEL SISTEMA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.groupBox2.Controls.Add(this.gbClientes);
+            this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Controls.Add(this.gbAltaLibro);
+            this.groupBox2.Controls.Add(this.gbEjemplares);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Gray;
+            this.groupBox2.Location = new System.Drawing.Point(12, 23);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(424, 359);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "OPCIONES DEL SISTEMA";
+            // 
+            // btnAltaCliente
+            // 
+            this.btnAltaCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaCliente.Location = new System.Drawing.Point(32, 40);
+            this.btnAltaCliente.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnAltaCliente.Name = "btnAltaCliente";
+            this.btnAltaCliente.Size = new System.Drawing.Size(110, 23);
+            this.btnAltaCliente.TabIndex = 0;
+            this.btnAltaCliente.Text = "Alta Cliente";
+            this.btnAltaCliente.UseVisualStyleBackColor = true;
+            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
+            // 
+            // btnListarCliente
+            // 
+            this.btnListarCliente.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarCliente.Location = new System.Drawing.Point(32, 83);
+            this.btnListarCliente.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnListarCliente.Name = "btnListarCliente";
+            this.btnListarCliente.Size = new System.Drawing.Size(110, 23);
+            this.btnListarCliente.TabIndex = 3;
+            this.btnListarCliente.Text = "Listar Clientes";
+            this.btnListarCliente.UseVisualStyleBackColor = true;
+            this.btnListarCliente.Click += new System.EventHandler(this.btnListarCliente_Click);
+            // 
+            // gbClientes
+            // 
+            this.gbClientes.Controls.Add(this.btnListarCliente);
+            this.gbClientes.Controls.Add(this.btnAltaCliente);
+            this.gbClientes.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbClientes.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gbClientes.Location = new System.Drawing.Point(26, 44);
+            this.gbClientes.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.gbClientes.Name = "gbClientes";
+            this.gbClientes.Padding = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.gbClientes.Size = new System.Drawing.Size(177, 133);
+            this.gbClientes.TabIndex = 0;
+            this.gbClientes.TabStop = false;
+            this.gbClientes.Text = "Módulo Clientes";
             // 
             // Principal
             // 
@@ -225,11 +233,7 @@ namespace BibliotecaUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(448, 403);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.gbAltaLibro);
-            this.Controls.Add(this.gbEjemplares);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.gbClientes);
+            this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -237,20 +241,18 @@ namespace BibliotecaUI
             this.Name = "Principal";
             this.Text = "Biblioteca Jeremias SpringField";
             this.Load += new System.EventHandler(this.Principal_Load);
-            this.gbClientes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.gbEjemplares.ResumeLayout(false);
             this.gbEjemplares.PerformLayout();
             this.gbAltaLibro.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.gbClientes.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox gbClientes;
-        private System.Windows.Forms.Button btnAltaCliente;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAltaPrestamo;
         private System.Windows.Forms.GroupBox gbEjemplares;
@@ -258,9 +260,11 @@ namespace BibliotecaUI
         private System.Windows.Forms.GroupBox gbAltaLibro;
         private System.Windows.Forms.Button btnAltaLibro;
         private System.Windows.Forms.Button btnListarPres;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnListarCliente;
         private System.Windows.Forms.Button btnListarEjemplar;
         private System.Windows.Forms.Button btnListarLibros;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbClientes;
+        private System.Windows.Forms.Button btnListarCliente;
+        private System.Windows.Forms.Button btnAltaCliente;
     }
 }
