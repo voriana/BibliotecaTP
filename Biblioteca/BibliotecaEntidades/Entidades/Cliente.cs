@@ -46,5 +46,10 @@ namespace BibliotecaEntidades.Entidades
             get { return $"{this.Nombre}  {this.Apellido}"; }
         }
 
+        public string MostrarEnLista
+        { 
+            get { return $"{this.Id}){this.Nombre}  {this.Apellido}"; }
+        }
+
     }
 }

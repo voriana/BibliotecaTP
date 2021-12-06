@@ -94,8 +94,17 @@ namespace BibliotecaUI
         }
         private void Volver_click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Owner.Show();
+            try
+            {
+                this.Hide();
+                this.Owner.Show();
+            }
+
+            catch
+            {
+                MessageBox.Show("Error al volver al formulario principal");
+
+            }
         }
         #endregion"Botones"
         #region"Metodos"

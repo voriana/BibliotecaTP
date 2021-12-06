@@ -16,11 +16,13 @@ namespace BibliotecaUI
 
     {
         private ClienteServicio _clienteServicio;
-        List<Cliente> _clientes = new List<Cliente>();
+        List<Cliente> _clientes;
+        private Cliente _cliente;
         public Clientes(Form principal)
         {
             _clienteServicio = new ClienteServicio();
             _clientes = new List<Cliente>();
+            _cliente = new Cliente();
             this.Owner = principal;
             InitializeComponent();
         }
@@ -28,10 +30,11 @@ namespace BibliotecaUI
         private void FrmListarClientes_Load(object sender, EventArgs e)
 
         {
-            
             _clientes = _clienteServicio.TraerClientes();
             cmbIDClientes.DataSource = _clientes;
             cmbIDClientes.DisplayMember = "MostrarCombo";
+            lstboxClientes.DataSource = _clientes;
+            lstboxClientes.DisplayMember= "MostrarEnLista";
 
         }
 
@@ -88,9 +91,9 @@ namespace BibliotecaUI
         {
             try
             { Limpiar(); }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Error al limpiar los campos");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -107,6 +110,11 @@ namespace BibliotecaUI
             chbActivo.Checked = false;
             ChbNoActivo.Checked = false;
             txbTelefono.Clear();
+            lstboxClientes.DataSource = null;
+            _clientes = _clienteServicio.TraerClientes();
+            lstboxClientes.DataSource = _clientes;
+            lstboxClientes.DisplayMember = "MostrarEnLista";
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -116,9 +124,21 @@ namespace BibliotecaUI
                 this.Hide();
                 this.Owner.Show();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al volver al formulario principal");
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmbIDClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbIDClientes.SelectedItem != null)
+            {
+                _cliente = (Cliente)cmbIDClientes.SelectedItem;
+                List <Cliente> ClienteSeleccionado= new List<Cliente>();
+                ClienteSeleccionado.Add(_cliente);
+                lstboxClientes.DataSource = ClienteSeleccionado;
+                lstboxClientes.DisplayMember = "MostrarEnLista";
             }
         }
     }
