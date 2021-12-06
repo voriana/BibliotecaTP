@@ -58,6 +58,7 @@ namespace BibliotecaUI
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lstboxClientes = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,26 +78,27 @@ namespace BibliotecaUI
             // 
             this.cmbIDClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIDClientes.FormattingEnabled = true;
-            this.cmbIDClientes.Location = new System.Drawing.Point(45, 271);
+            this.cmbIDClientes.Location = new System.Drawing.Point(36, 134);
             this.cmbIDClientes.Name = "cmbIDClientes";
             this.cmbIDClientes.Size = new System.Drawing.Size(284, 28);
             this.cmbIDClientes.TabIndex = 1;
+            this.cmbIDClientes.SelectedIndexChanged += new System.EventHandler(this.cmbIDClientes_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 226);
+            this.label2.Location = new System.Drawing.Point(32, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "ID Cliente";
+            this.label2.Text = "Clientes";
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscar.Location = new System.Drawing.Point(117, 347);
+            this.btnBuscar.Location = new System.Drawing.Point(115, 181);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(134, 49);
             this.btnBuscar.TabIndex = 3;
@@ -318,19 +320,29 @@ namespace BibliotecaUI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(58, 74);
+            this.pictureBox1.Location = new System.Drawing.Point(228, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(229, 131);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
+            // 
+            // lstboxClientes
+            // 
+            this.lstboxClientes.FormattingEnabled = true;
+            this.lstboxClientes.ItemHeight = 20;
+            this.lstboxClientes.Location = new System.Drawing.Point(23, 244);
+            this.lstboxClientes.Name = "lstboxClientes";
+            this.lstboxClientes.Size = new System.Drawing.Size(296, 284);
+            this.lstboxClientes.TabIndex = 43;
             // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(941, 488);
+            this.ClientSize = new System.Drawing.Size(953, 540);
+            this.Controls.Add(this.lstboxClientes);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.groupBox1);
@@ -398,5 +410,6 @@ namespace BibliotecaUI
         private System.Windows.Forms.CheckBox chbActivo;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox lstboxClientes;
     }
 }

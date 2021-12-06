@@ -47,9 +47,17 @@ namespace BibliotecaUI
         //boton volver
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Limpiar();
-            this.Hide();
-            this.Owner.Show();
+            try
+            {
+                Limpiar();
+                this.Hide();
+                this.Owner.Show();
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Boton guardar
