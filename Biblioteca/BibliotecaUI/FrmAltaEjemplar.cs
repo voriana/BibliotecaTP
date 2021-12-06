@@ -22,8 +22,6 @@ namespace BibliotecaUI
         private LibroServicio _libroServicio;
         List<Ejemplar> _ejemplares;
 
-
-
         public Alta_Ejemplar(Form form)
         {
            
@@ -32,31 +30,23 @@ namespace BibliotecaUI
             _ejemplares = new List<Ejemplar>();
             this.Owner = form;
             InitializeComponent();
-         
         }
 
         private void Alta_Ejemplar_Load(object sender, EventArgs e)
         {
             CargarLibros();
+            Refrescar();
         }
 
         private void CargarLibros()
         {
             List<Libro> _libros = _libroServicio.TraerLibros();
             cmbLibros.DataSource = _libros;
-            cmbLibros.DisplayMember = "MostrarComboAltaEjemplar";
-            _ejemplares = _ejemplarServicio.TraerEjemplares();
-            LstbEjemplares.DataSource = _ejemplares;
-            LstbEjemplares.DisplayMember = "MostrarEnCombo";
-
-
+            cmbLibros.DisplayMember = "MostrarBusquedaLibro";
         }
-
 
         private void VerificacionesAlta()
         {
-
-
             if (((Libro)cmbLibros.SelectedItem) == null)
             {
                 throw new Exception("Seleccione un Libro");
@@ -76,10 +66,29 @@ namespace BibliotecaUI
             
         }
 
+        private Ejemplar CargarEjemplar()
+        {
+            Ejemplar _nuevoEjemplar = new Ejemplar();
+            Libro libro = (Libro)cmbLibros.SelectedItem;
+            _nuevoEjemplar.IdLibro = libro.Id;
+            _nuevoEjemplar.Libros = libro;
+            _nuevoEjemplar.Observaciones = txbObservaciones.Text;
+            _nuevoEjemplar.Precio = double.Parse(txbPrecio.Text);
+            return _nuevoEjemplar;
+
+        }
+
+        private void Refrescar()
+        {
+            LstbEjemplares.DataSource = null;
+            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
+            LstbEjemplares.DataSource = _ejemplares;
+            LstbEjemplares.DisplayMember = "MostrarEnCombo";
+        }
+
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-
             try
             {
                 VerificacionesAlta();
@@ -100,36 +109,31 @@ namespace BibliotecaUI
             }
         }
 
-        private Ejemplar CargarEjemplar()
-        {
-            Ejemplar _nuevoEjemplar = new Ejemplar();
-            Libro libro = new Libro();
-            libro = (Libro)cmbLibros.SelectedItem;
-            _nuevoEjemplar.IdLibro = libro.Id;           
-            _nuevoEjemplar.Libros =_libroServicio.TraerLibroPorId(_nuevoEjemplar.IdLibro);
-            _nuevoEjemplar.Observaciones = txbObservaciones.Text;
-            _nuevoEjemplar.Precio = double.Parse(txbPrecio.Text);
-            return _nuevoEjemplar;
-
-        }
-
-        private void Refrescar()
-        {
-            LstbEjemplares.DataSource = null;
-            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
-            LstbEjemplares.DataSource = _ejemplares;
-            LstbEjemplares.DisplayMember = "MostrarEnCombo";
-        }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Owner.Show();
+            try
+            {
+                this.Hide();
+                this.Owner.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
+             try
+            {
+                txbObservaciones.Clear();
+                txbPrecio.Clear();
+                cmbLibros.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
     }
 }

@@ -17,16 +17,14 @@ namespace BibliotecaNegocio
         private List<Libro> _libros;
         private EjemplarMapper _Ejemplarmapper;
         private LibroMapper _libroMapper;
-        //private List<Ejemplar> _ejemplaresPorID;
-
-
+       
         public EjemplarServicio()
         {
             _ejemplares = new List<Ejemplar>();
             _libros = new List<Libro>();
             _Ejemplarmapper = new EjemplarMapper();
             _libroMapper = new LibroMapper();
-            //_ejemplaresPorID = new List<Ejemplar>();
+            
         }
       
  
@@ -45,14 +43,17 @@ namespace BibliotecaNegocio
            
             foreach( var ejemplar in _ejemplares)
             {
-               foreach(var libro in _libros)
+                if (ejemplar.Libros == null)
                 {
-                    if (ejemplar.IdLibro ==libro.Id)
+                    foreach (var libro in _libros)
                     {
-                        ejemplar.Libros = libro;
+                        if (ejemplar.IdLibro == libro.Id)
+                        {
+                            ejemplar.Libros = libro;
+                        }
+
                     }
-                   
-               }
+                }
             }
             return _ejemplares;
         }

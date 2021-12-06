@@ -75,21 +75,30 @@ namespace BibliotecaUI
             List<Ejemplar> _ejemplares = _ejemplarServicio.TraerEjemplaresPorIdLibro(_libro.Id);
             lstbEjemplares.DataSource = _ejemplares;
             lstbEjemplares.DisplayMember = "MostrarEnCombo";
-            
-
-
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            cmbLibros.SelectedItem = null;
-            lstbEjemplares.DataSource = null;
+            try
+            {
+                cmbLibros.SelectedItem = null;
+                lstbEjemplares.DataSource = null;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void _btnVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Owner.Show();
+            try
+            {
+                this.Hide();
+                this.Owner.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
