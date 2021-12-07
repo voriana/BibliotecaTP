@@ -36,7 +36,6 @@ namespace BibliotecaUI
         }
         private void FrmPrestamo_Load(object sender, EventArgs e)
         {
-            Limpiar();
             CargaComboCliente();
             CargarComboEjemplar();
             CargarLista();
