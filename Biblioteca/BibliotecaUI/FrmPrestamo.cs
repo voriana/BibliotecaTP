@@ -47,9 +47,17 @@ namespace BibliotecaUI
         //boton volver
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Limpiar();
-            this.Hide();
-            this.Owner.Show();
+            try
+            {
+                Limpiar();
+                this.Hide();
+                this.Owner.Show();
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Boton guardar
@@ -157,8 +165,8 @@ namespace BibliotecaUI
         }
         private void CargarComboEjemplar()
         {
-            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             cbEjemplar.DataSource = null;
+            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             cbEjemplar.DataSource = _ejemplares;
             cbEjemplar.DisplayMember = "MostrarEnCombo";
         }
