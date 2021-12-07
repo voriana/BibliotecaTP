@@ -58,10 +58,16 @@ namespace BibliotecaEntidades.Entidades
                  $"{Id.ToString()}) ${Precio.ToString("0.00")}ARS -Autor: {this.Libros.Autor}";
 
         }
+        public string MostrarEnComboEjemplar
+        {
+            get =>
+                 $"{Id.ToString()}) ${Precio.ToString("0.00")}ARS -Titulo: {this.Libros.Titulo}";
 
-      
+        }
 
-       
-   
+
+
+
+
     }
 }

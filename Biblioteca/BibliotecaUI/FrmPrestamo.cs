@@ -157,9 +157,8 @@ namespace BibliotecaUI
         #region"METODOS"
         private void CargaComboCliente()
         {
-            //_clientes = new List<Cliente>();
-            _clientes = _clienteServicio.TraerClientes();
             cbClientes.DataSource = null;
+            _clientes = _clienteServicio.TraerClientes();
             cbClientes.DataSource = _clientes;
             cbClientes.DisplayMember = "MostrarCombo";
         }
@@ -168,7 +167,7 @@ namespace BibliotecaUI
             cbEjemplar.DataSource = null;
             _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             cbEjemplar.DataSource = _ejemplares;
-            cbEjemplar.DisplayMember = "MostrarEnCombo";
+            cbEjemplar.DisplayMember = "MostrarEnComboEjemplar";
         }
         private void CargarLista()
         {
@@ -176,6 +175,7 @@ namespace BibliotecaUI
             lstPrestamos.DataSource = null;
             lstPrestamos.DataSource = _prestamos;
             lstPrestamos.DisplayMember = "MostrarEnListaPrestamos";
+            Calculos();
         }
 
         private void Limpiar()
@@ -227,7 +227,7 @@ namespace BibliotecaUI
         private void Calculos()
         {
             OperacionModel operacion = new OperacionModel(_prestamoServicio.TraerPrestamosConEjemplares());
-            groupBox2.Text += $" {operacion.CantidadPrestamos.ToString()}";
+            groupBox2.Text = $"Cantidad prestamos existentes {operacion.CantidadPrestamos.ToString()}";
         }
         #endregion"METODOS"
 
