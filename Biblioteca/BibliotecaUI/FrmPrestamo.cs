@@ -165,8 +165,8 @@ namespace BibliotecaUI
         }
         private void CargarComboEjemplar()
         {
-            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             cbEjemplar.DataSource = null;
+            _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             cbEjemplar.DataSource = _ejemplares;
             cbEjemplar.DisplayMember = "MostrarEnCombo";
         }
