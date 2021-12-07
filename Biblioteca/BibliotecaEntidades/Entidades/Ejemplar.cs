@@ -59,9 +59,15 @@ namespace BibliotecaEntidades.Entidades
 
         }
 
-      
+        public string MostrarEnLista
+        {
+            get =>
+                 $"{Id.ToString()}) ${Precio.ToString("0.00")}ARS -Autor: {this.Libros.Autor}-Titulo:{this.Libros.Titulo}";
 
-       
-   
+        }
+
+
+
+
     }
 }

@@ -83,7 +83,7 @@ namespace BibliotecaUI
             LstbEjemplares.DataSource = null;
             _ejemplares = _ejemplarServicio.TraerEjemplaresConLibros();
             LstbEjemplares.DataSource = _ejemplares;
-            LstbEjemplares.DisplayMember = "MostrarEnCombo";
+            LstbEjemplares.DisplayMember = "MostrarEnLista";
         }
 
 
